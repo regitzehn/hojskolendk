@@ -31,39 +31,64 @@ import PriceCard from "../components/PriceCard.astro";
 
   <!-- Cards Section -->
   <!-- Price Cards Section -->
-<section
-class="relative w-full bg-cover bg-center bg-no-repeat py-24 text-[var(--color-hvid)]"
-style="background-image: url('src/assets/images/priser2.webp');"
+  <section
+  class="relative w-full bg-cover bg-center bg-no-repeat py-24 text-[var(--color-hvid)]"
+  style="background-image: url('src/assets/images/priser2.webp');"
 >
-<div class="absolute inset-0 bg-[rgba(0,0,0,0.25)]"></div>
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-[rgba(0,0,0,0.25)]"></div>
 
-<div class="relative z-10 content-wrapper">
-  <div
-    class="flex lg:grid lg:grid-cols-3 gap-10 overflow-x-auto snap-x snap-mandatory pb-6 scrollbar-hide"
-  >
-    <!-- Cards -->
-    <div class="flex-shrink-0 lg:flex-shrink lg:col-span-1 snap-center min-w-[85%] sm:min-w-[60%] lg:min-w-0">
-      <PriceCard
-        title="BRASILIEN<br>COLOMBIA<br>COSTA RICA<br>MEXICO"
-        background="src/assets/images/brazil-card.png"
-      />
+  <!-- Content -->
+  <div class="relative z-10 content-wrapper">
+    <!-- Scrollable cards -->
+    <div class="cards-scroll pb-6 scrollbar-hide items-start">
+      <div class="card-item">
+        <PriceCard
+          title="BRASILIEN<br>COLOMBIA<br>COSTA RICA<br>MEXICO"
+          background="src/assets/images/brazil-card.png"
+        />
+      </div>
+      <div class="card-item">
+        <PriceCard
+          title="HAWAII<br>AUSTRALIEN<br>JAPAN<br>BALI<br>GILI ISLANDS"
+          background="src/assets/images/hawaii-card.png"
+        />
+      </div>
+      <div class="card-item">
+        <PriceCard
+          title="AUSTRALIEN<br>NEW ZEALAND<br>VIETNAM<br>BALI<br>LOMBOK"
+          background="src/assets/images/australia-card.png"
+        />
+      </div>
+      <div class="card-item">
+        <PriceCard
+          title="BRASILIEN<br>COLOMBIA<br>COSTA RICA<br>MEXICO"
+          background="src/assets/images/brazil-card.png"
+        />
+      </div>
+      <div class="card-item">
+        <PriceCard
+          title="HAWAII<br>AUSTRALIEN<br>JAPAN<br>BALI<br>GILI ISLANDS"
+          background="src/assets/images/hawaii-card.png"
+        />
+      </div>
+      <div class="card-item">
+        <PriceCard
+          title="AUSTRALIEN<br>NEW ZEALAND<br>VIETNAM<br>BALI<br>LOMBOK"
+          background="src/assets/images/australia-card.png"
+        />
+      </div>
     </div>
 
-    <div class="flex-shrink-0 lg:flex-shrink lg:col-span-1 snap-center min-w-[85%] sm:min-w-[60%] lg:min-w-0">
-      <PriceCard
-        title="HAWAII<br>AUSTRALIEN<br>JAPAN<br>BALI<br>GILI ISLANDS"
-        background="src/assets/images/hawaii-card.png"
-      />
-    </div>
-
-    <div class="flex-shrink-0 lg:flex-shrink lg:col-span-1 snap-center min-w-[85%] sm:min-w-[60%] lg:min-w-0">
-      <PriceCard
-        title="AUSTRALIEN<br>NEW ZEALAND<br>VIETNAM<br>BALI<br>LOMBOK"
-        background="src/assets/images/australia-card.png"
+    <!-- 👇 Your PNG scroll indicator -->
+    <div class="z-10 flex justify-center mt-10 ">
+      <img
+        src="src/assets/images/Arrow.svg"
+        alt="Scroll for more"
+        class="w-60 h-auto animate-bounce opacity-90 drop-shadow-[0_0_6px_rgba(0,0,0,0.4)]"
       />
     </div>
   </div>
-</div>
 </section>
   <!-- Planlæg Dit Højskolebudget -->
 <section class="content-wrapper my-24 md:my-32 lg:my-40 text-[var(--color-sort)]">
