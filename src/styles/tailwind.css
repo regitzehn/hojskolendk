@@ -12,7 +12,7 @@
 
 @font-face {
   font-family: "Poppins";
-  src: url("/fonts/Poppins-VariableFont_wght.ttf") format("truetype");
+  src: url("/fonts/Poppins-Regular.ttf") format("truetype");
 }
 
 @theme {
@@ -36,6 +36,9 @@
 }
 
 @layer components {
+  .content-wrapper {
+    @apply px-[60px] md:px-[40px] sm:px-[24px] max-w-[1440px] mx-auto w-full;
+  }
   .h1 {
     @apply text-[40px] md:text-[64px] leading-none font-medium;
   }
@@ -50,6 +53,13 @@
 
   .p {
     @apply text-[18px] md:text-[24px] leading-normal font-normal;
+  }
+
+  .hero-h1 {
+    @apply text-[48px] sm:text-[72px] lg:text-[96px] leading-[1.1] font-medium;
+  }
+  .hero-p {
+    @apply text-[22px] sm:text-[32px] lg:text-[44px] font-normal mt-4;
   }
 }
 
