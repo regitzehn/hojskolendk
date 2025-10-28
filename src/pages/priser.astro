@@ -1,0 +1,95 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import PriceCard from "../components/PriceCard.astro";
+---
+
+<MainLayout title="Priser på Højskoler i Udlandet">
+
+  <!-- Hero Section -->
+  <section
+    class="relative w-full h-[80vh] bg-cover bg-center flex flex-col justify-center items-center text-center text-[var(--color-hvid)]"
+    style="background-image: url('src/assets/images/priser1.webp');"
+  >
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-[rgba(0,0,0,0.35)]"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 content-wrapper">
+      <h1 class="h1 font-[Montserrat] mb-4">PRISER PÅ HØJSKOLER I UDLANDET</h1>
+    </div>
+  </section>
+
+  <!-- Intro Section -->
+  <section class="content-wrapper my-16 md:my-24 lg:my-32 text-[var(--color-sort)]">
+    <h2 class="h2 pb-4">Priserne samlet ét sted</h2>
+    <p class="p max-w-[65ch]">
+      Vi har samlet alle priser på vores eventyrlige ophold/rejser på denne side, for at skabe et fint overblik for dig der er nysgerrig.
+      <br><br>
+      Husk at du på vores destinationssider kan læse meget mere om alle de fede adventure-aktiviteter der er inkluderet på højskoleophold, og alt vedr. program og indhold, fag og undervisning, lokal transport, fridage, lommepenge og meget andet.
+    </p>
+  </section>
+
+  <!-- Cards Section -->
+  <!-- Price Cards Section -->
+<section
+class="relative w-full bg-cover bg-center bg-no-repeat py-24 text-[var(--color-hvid)]"
+style="background-image: url('src/assets/images/priser2.webp');"
+>
+<div class="absolute inset-0 bg-[rgba(0,0,0,0.25)]"></div>
+
+<div class="relative z-10 content-wrapper">
+  <div
+    class="flex lg:grid lg:grid-cols-3 gap-10 overflow-x-auto snap-x snap-mandatory pb-6 scrollbar-hide"
+  >
+    <!-- Cards -->
+    <div class="flex-shrink-0 lg:flex-shrink lg:col-span-1 snap-center min-w-[85%] sm:min-w-[60%] lg:min-w-0">
+      <PriceCard
+        title="BRASILIEN<br>COLOMBIA<br>COSTA RICA<br>MEXICO"
+        background="src/assets/images/brazil-card.png"
+      />
+    </div>
+
+    <div class="flex-shrink-0 lg:flex-shrink lg:col-span-1 snap-center min-w-[85%] sm:min-w-[60%] lg:min-w-0">
+      <PriceCard
+        title="HAWAII<br>AUSTRALIEN<br>JAPAN<br>BALI<br>GILI ISLANDS"
+        background="src/assets/images/hawaii-card.png"
+      />
+    </div>
+
+    <div class="flex-shrink-0 lg:flex-shrink lg:col-span-1 snap-center min-w-[85%] sm:min-w-[60%] lg:min-w-0">
+      <PriceCard
+        title="AUSTRALIEN<br>NEW ZEALAND<br>VIETNAM<br>BALI<br>LOMBOK"
+        background="src/assets/images/australia-card.png"
+      />
+    </div>
+  </div>
+</div>
+</section>
+  <!-- Planlæg Dit Højskolebudget -->
+<section class="content-wrapper my-24 md:my-32 lg:my-40 text-[var(--color-sort)]">
+    <h2 class="h2 pb-8">Planlæg dit højskolebudget</h2>
+  
+    <p class="p max-w-[65ch] mb-8">
+      Priserne for vores højskoleophold i udlandet er forskellige alt efter længde på opholdet, hvilke og hvor mange lande
+      (og dermed flybilletpriser) vi besøger, inkluderede adventure-aktiviteter, indkvarterings-priser, lokal transport og andet.
+    </p>
+  
+    <p class="p max-w-[65ch] mb-8">
+      Vi har bevidst – og velovervejet – undladt at inkludere indkvartering i fridugerne, da alle elever altid rejser ud på eventyr,
+      når det er friduge-tid. Det giver så god mening at give eleverne den frihed, og ikke samtidig skulle betale for hytter/værelser
+      på højskolen, der blot ender med at stå tomme.
+    </p>
+  
+    <p class="p max-w-[65ch] mb-8">
+      Vi er desværre ikke bekendt at nogle af vores tidligere elever har modtaget tilskud til et af vores højskoleophold.
+      Dog kan man kontakte sin kommune ifm. en evt. ansøgning i forhold til tilskud til højskole.
+      Der er kommuner der yder tilskud til højskoleophold, og beløbets størrelse varierer.
+    </p>
+  
+    <p class="p max-w-[65ch]">
+      De fleste af vores elever sparer selv op, gennem enten fritids- eller fuldtidsjob og vi anbefaler altid at give den gas ift. opsparing,
+      så man ikke skal tænke på at skulle spare, mens man er på eventyr på højskole i udlandet.
+    </p>
+  </section>
+
+</MainLayout>
