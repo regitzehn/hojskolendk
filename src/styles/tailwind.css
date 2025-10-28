@@ -22,7 +22,7 @@
   --color-gron-2: #d6ffc3;
   --color-gron-3: #edffe5;
   --color-orange-accent: #ff5900;
-  --color-hvid: #f7f0e7;
+  --color-hvid: #fffcf9;
 }
 
 @layer base {
@@ -39,28 +39,30 @@
   .content-wrapper {
     @apply px-[60px] md:px-[40px] sm:px-[24px] max-w-[1440px] mx-auto w-full;
   }
-  .h1 {
-    @apply text-[40px] md:text-[64px] leading-none font-medium font-[Montserrat];
-  }
+  @layer components {
+    .h1 {
+      @apply text-[38px] md:text-[52px] leading-none font-medium font-[Montserrat];
+    }
 
-  .h2 {
-    @apply text-[28px] md:text-[40px] leading-tight font-medium font-[Montserrat];
-  }
+    .h2 {
+      @apply text-[26px] md:text-[38px] leading-tight font-medium font-[Montserrat];
+    }
 
-  .h3 {
-    @apply text-[24px] md:text-[32px] leading-snug font-medium font-[Montserrat];
-  }
+    .h3 {
+      @apply text-[23px] md:text-[30px] leading-snug font-medium font-[Montserrat];
+    }
 
-  .p {
-    @apply text-[18px] md:text-[24px] leading-normal font-normal font-[Poppins];
-  }
+    .p {
+      @apply text-[17px] md:text-[23px] leading-normal font-normal font-[Poppins];
+    }
 
-  .hero-h1 {
-    @apply text-[48px] sm:text-[72px] lg:text-[96px] leading-[1.1] font-medium font-[Montserrat];
-  }
+    .hero-h1 {
+      @apply text-[46px] sm:text-[68px] lg:text-[86px] leading-[1.1] font-medium font-[Montserrat];
+    }
 
-  .hero-p {
-    @apply text-[22px] sm:text-[32px] lg:text-[44px] font-normal mt-4 font-[Poppins];
+    .hero-p {
+      @apply text-[21px] sm:text-[30px] lg:text-[36px] font-normal mt-4 font-[Poppins];
+    }
   }
 }
 
