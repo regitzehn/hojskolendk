@@ -37,19 +37,19 @@
 
 @layer components {
   .h1 {
-    @apply text-[40px] md:text-[64px] leading-none font-bold;
+    @apply text-[40px] md:text-[64px] leading-none font-medium;
   }
 
   .h2 {
-    @apply text-[28px] md:text-[40px] leading-tight font-semibold;
+    @apply text-[28px] md:text-[40px] leading-tight font-medium;
   }
 
   .h3 {
-    @apply text-[24px] md:text-[32px] leading-snug font-semibold;
+    @apply text-[24px] md:text-[32px] leading-snug font-medium;
   }
 
   .p {
-    @apply text-[18px] md:text-[24px] leading-normal font-light;
+    @apply text-[18px] md:text-[24px] leading-normal font-normal;
   }
 }
 
