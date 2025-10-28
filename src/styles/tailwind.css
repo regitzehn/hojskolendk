@@ -67,4 +67,52 @@
 }
 
 @layer utilities {
+  @media (max-width: 1168px) {
+    .cards-scroll {
+      display: flex !important;
+      align-items: flex-start !important;
+      justify-content: flex-start !important;
+      overflow-x: auto !important;
+      scroll-snap-type: x mandatory !important;
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+      gap: 0 !important;
+      padding: 1rem;
+    }
+
+    .cards-scroll > .card-item {
+      flex: none !important;
+      width: 360px !important; /* 👈 FIX: lock width in scroll mode */
+      scroll-snap-align: start;
+      margin-right: 1.5rem; /* 👈 spacing between cards */
+    }
+
+    .cards-scroll > .card-item:last-child {
+      margin-right: 0;
+    }
+  }
+
+  @media (min-width: 1169px) {
+    .cards-scroll {
+      display: grid !important;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: start !important;
+      justify-items: center;
+      gap: 2.5rem !important;
+      overflow: visible !important;
+      padding: 0;
+    }
+
+    .cards-scroll > .card-item {
+      width: auto !important; /* 👈 reset for grid mode */
+      margin: 0;
+    }
+  }
+
+  .scrollbar-hide {
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }
