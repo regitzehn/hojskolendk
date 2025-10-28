@@ -1,12 +1,28 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @plugin '@tailwindcss/typography';
 @plugin '@tailwindcss/forms';
 @import "tailwindcss-animated";
 @import "tailwindcss-intersect";
 
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/Montserrat-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins-VariableFont_wght.ttf") format("truetype");
+}
+
 @theme {
   /* Her tilføjes theme variable // tokens */
+  --color-sort: #362f33;
+  --color-gron-1: #bbff9d;
+  --color-gron-2: #d6ffc3;
+  --color-gron-3: #edffe5;
+  --color-orange-accent: #ff5900;
+  --color-hvid: #f7f0e7;
 }
 
 @layer base {
@@ -19,9 +35,23 @@
   }
 }
 
-@layer components{
+@layer components {
+  .h1 {
+    @apply text-[40px] md:text-[64px] leading-none font-bold;
+  }
 
+  .h2 {
+    @apply text-[28px] md:text-[40px] leading-tight font-semibold;
+  }
+
+  .h3 {
+    @apply text-[24px] md:text-[32px] leading-snug font-semibold;
+  }
+
+  .p {
+    @apply text-[18px] md:text-[24px] leading-normal font-light;
+  }
 }
-@layer utilities{
-  
+
+@layer utilities {
 }
