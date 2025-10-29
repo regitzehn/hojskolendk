@@ -17,39 +17,38 @@
 <Button href="/infomoder" text="Infomøder" color="hvid" />
 <Button href="/rejser" text="Læs mere" color="sort" />
 <Button href="#" text="Send" size="lg" color="sort" uppercase={false} />
-
 ──────────────────────────────────────────
 */
 
 const {
-    href = "#",
-    text = "Button",
-    type = "button",
-    color = "hvid",
-    size = "md",
-    uppercase = true,
-  } = Astro.props;
-  ---
-  
-  <a
-    href={href}
-    type={type}
-    class:list={[
-      // base styles (match .btn-outline)
-      "inline-block border-[3px] rounded-full font-[Poppins] font-medium tracking-wide transition-all duration-300 text-center",
-      uppercase && "uppercase",
-  
-      // size (match padding from .btn-outline)
-      size === "sm" && "px-4 py-1 text-[14px]",
-      size === "md" && "px-5 py-2 text-[15px]",
-      size === "lg" && "px-5 py-2 text-[16px]",
-  
-      // color variants — exact match to header .btn-outline
-      color === "hvid" &&
-        "border-[var(--color-hvid)] text-[var(--color-hvid)] bg-transparent hover:bg-[var(--color-orange-accent)] hover:border-[var(--color-hvid)] hover:text-[var(--color-hvid)]",
-      color === "sort" &&
-        "border-[var(--color-sort)] text-[var(--color-sort)] bg-transparent hover:bg-[var(--color-orange-accent)] hover:border-[var(--color-orange-accent)] hover:text-[var(--color-hvid)]",
-    ]}
-  >
-    {text}
-  </a>
+  href = "#",
+  text = "Button",
+  type = "button",
+  color = "hvid",
+  size = "md",
+  uppercase = true,
+} = Astro.props;
+---
+
+<a
+  href={href}
+  type={type}
+  class:list={[
+    // base styles (same as .btn-outline)
+    "inline-block border-[3px] rounded-full font-[Montserrat] font-semibold tracking-wide transition-all duration-300 text-center",
+    uppercase && "uppercase",
+
+    // size (match padding from .btn-outline)
+    size === "sm" && "px-4 py-1 text-[14px]",
+    size === "md" && "px-5 py-2 text-[15px]",
+    size === "lg" && "px-5 py-2 text-[16px]",
+
+    // color variants — maintain visible border even on hover
+    color === "hvid" &&
+      "border-[var(--color-hvid)] text-[var(--color-hvid)] bg-transparent hover:bg-[var(--color-orange-accent)] hover:text-[var(--color-hvid)]",
+    color === "sort" &&
+      "border-[var(--color-sort)] text-[var(--color-sort)] bg-transparent hover:bg-[var(--color-orange-accent)] hover:text-[var(--color-hvid)]",
+  ]}
+>
+  {text}
+</a>
