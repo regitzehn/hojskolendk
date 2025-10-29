@@ -1,7 +1,7 @@
 
 <section class="trin-container">
      <header class="trin-header">
-        <h1 class="trin-title">Sådan fungerer det (trin for trin)</h1>
+        <h1 class="trin-title">SÅDAN FUNGERER DET (TRIN FOR TRIN)</h1>
         <p class="trin-lead">Få overblik over, hvordan du kan komme med på en rejse med HøjskolenDK. Vælg, om du vil reservere en plads, tilmelde dig, eller blot høre mere.</p>
     </header>
 
@@ -44,9 +44,7 @@
     font-weight: 64;
     color: #ffffff;
     font-size: 64px; }/* juster værdier efter behov */
-
- 
-
+    
 
 /* optionally ensure header spacing */
 .trin-header { margin-bottom: 1rem; }
@@ -56,7 +54,6 @@
     font-weight: 32;
     font-size: 32px;
     
-
     
 }
 /* make the page use a full-screen background image */
@@ -65,11 +62,13 @@
     margin: 0;
 }
 :global(body) {
+    font-family: 'Montserrat', sans-serif;
     background-image: url('/boat.png'); /* replace with your image path */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+
 }
 
 .trin-container {
@@ -80,6 +79,8 @@
     gap: 1.5rem;
     min-height: 40vh;
     padding: 1rem;
+ 
+    
 }
 
 .box {
@@ -94,6 +95,8 @@
     font-weight: 600;
     color: #111827;
     border: 2px solid #362f33; /* black border added */
+  
+
 }
 /* new: center content inside boxes (stacked vertically, centered text) */
 .box-content {
@@ -104,15 +107,24 @@
     text-align: center; /* center paragraph text */
     gap: 0.25rem;
     padding: 0 0.5rem;
+
+    
 }
 .box-title, .box-sub {
     margin: 0;
+   
+  
 }
 
 /* different background colors per box */
-.box--one { background: #bbff9d; }   /* soft red */
+.box--one { 
+      font-family: 'Poppins', sans-serif;
+    background: #bbff9d; }   /* soft red */
 .box--two { background: #d6ffc3; }   /* soft blue */
-.box--three { background: #edffe5; } /* soft green */
+.box--three { 
+    background: #edffe5; } /* soft green */
+
+
 
 /* move the button lower on the page and add a border */
 .btn {
