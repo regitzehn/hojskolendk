@@ -1,0 +1,135 @@
+
+<section class="trin-container">
+     <header class="trin-header">
+        <h1 class="trin-title">Sådan fungerer det (trin for trin)</h1>
+        <p class="trin-lead">Få overblik over, hvordan du kan komme med på en rejse med HøjskolenDK. Vælg, om du vil reservere en plads, tilmelde dig, eller blot høre mere.</p>
+    </header>
+
+    <div class="box box--one">
+        <div class="box-content">
+            <div class="box-title">1. Reserver en plads</div>
+            <p class="box-sub">Find din drømmerejse og reserver en plads – helt uforpligtende. Så holder vi en plads til dig, mens du beslutter dig.</p>
+        </div>
+    </div>
+
+  <div class="box box--two">
+        <div class="box-content">
+            <div class="box-title">2. Tilmeld dig rejsen</div>
+            <p class="box-sub">Klar til eventyret? Udfyld tilmeldingsformularen og køb din billet. Så er du officielt med på holdet!</p>
+        </div>
+    </div>
+
+    <div class="box box--three">
+        <div class="box-content">
+            <div class="box-title">3. Deltag i et infomøde (valgfrit)</div>
+            <p class="box-sub">Vil du høre mere først? Tilmeld dig et af vores infomøder og få svar på alle dine spørgsmål.</p>
+        </div>
+    </div>
+ 
+
+    <button class="btn btn--primary" type="button">VÆLG DIT EVENTYR</button>
+</section>
+
+<style>
+    /* center header text */
+.trin-header {
+    text-align: center;
+    width: 100%;
+}
+
+ 
+/* ændret: responsiv fontstørrelse for hovedoverskriften */
+.trin-title {
+    margin: 0;
+    font-weight: 64;
+    color: #ffffff;
+    font-size: 64px; }/* juster værdier efter behov */
+
+ 
+
+
+/* optionally ensure header spacing */
+.trin-header { margin-bottom: 1rem; }
+
+.trin-lead { 
+    color: #ffff;
+    font-weight: 32;
+    font-size: 32px;
+    
+
+    
+}
+/* make the page use a full-screen background image */
+:global(html, body) {
+    height: 100%;
+    margin: 0;
+}
+:global(body) {
+    background-image: url('/boat.png'); /* replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.trin-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    min-height: 40vh;
+    padding: 1rem;
+}
+
+.box {
+    width: 420px;
+    max-width: 90vw;
+    height: 110px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    font-weight: 600;
+    color: #111827;
+    border: 2px solid #362f33; /* black border added */
+}
+/* new: center content inside boxes (stacked vertically, centered text) */
+.box-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* center horizontally */
+    justify-content: center; /* center vertically within the content area */
+    text-align: center; /* center paragraph text */
+    gap: 0.25rem;
+    padding: 0 0.5rem;
+}
+.box-title, .box-sub {
+    margin: 0;
+}
+
+/* different background colors per box */
+.box--one { background: #bbff9d; }   /* soft red */
+.box--two { background: #d6ffc3; }   /* soft blue */
+.box--three { background: #edffe5; } /* soft green */
+
+/* move the button lower on the page and add a border */
+.btn {
+    margin-top: 3rem;
+    padding: 0.6rem 1.1rem;
+    border-radius: 40px;               /* rounded corners */
+    border: 2px solid #ffff;         /* border around the button */
+    
+    color: #ffffff;
+    font-weight: 700;
+    cursor: pointer;
+   
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+   
+}
+</style>
