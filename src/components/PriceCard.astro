@@ -1,4 +1,5 @@
 ---
+import Button from "./Button.astro"; // 👈 Import the button component
 const { title, background } = Astro.props;
 ---
 
@@ -10,10 +11,8 @@ const { title, background } = Astro.props;
     class="relative h-64 bg-cover bg-center flex flex-col justify-center items-center text-center text-[var(--color-hvid)] px-4"
     style={`background-image: url(${background});`}
   >
-    <!-- Overlay for text readability -->
     <div class="absolute inset-0 bg-[rgba(0,0,0,0.35)]"></div>
 
-    <!-- Title -->
     <h3
       class="h3 uppercase tracking-wide leading-tight relative z-10"
       set:html={title}
@@ -29,55 +28,28 @@ const { title, background } = Astro.props;
         <li class="flex justify-between items-center">
           <span>15 januar 2026</span>
           <span>74.900 DKK</span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 10 10"
-            width="12"
-            height="12"
-            class="ml-2"
-          >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" width="12" height="12" class="ml-2">
             <circle cx="5" cy="5" r="5" fill="var(--color-orange-accent)" />
           </svg>
         </li>
-
         <li class="flex justify-between items-center">
           <span>14 januar 2027</span>
           <span>77.400 DKK</span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 10 10"
-            width="12"
-            height="12"
-            class="ml-2"
-          >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" width="12" height="12" class="ml-2">
             <circle cx="5" cy="5" r="5" fill="var(--color-gron-1)" />
           </svg>
         </li>
-
         <li class="flex justify-between items-center">
           <span>13 januar 2028</span>
           <span>79.900 DKK</span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 10 10"
-            width="12"
-            height="12"
-            class="ml-2"
-          >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" width="12" height="12" class="ml-2">
             <circle cx="5" cy="5" r="5" fill="var(--color-gron-1)" />
           </svg>
         </li>
-
         <li class="flex justify-between items-center">
           <span>12 januar 2029</span>
           <span>82.400 DKK</span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 10 10"
-            width="12"
-            height="12"
-            class="ml-2"
-          >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" width="12" height="12" class="ml-2">
             <circle cx="5" cy="5" r="5" fill="var(--color-gron-1)" />
           </svg>
         </li>
@@ -88,19 +60,10 @@ const { title, background } = Astro.props;
       </p>
     </div>
 
+    <!-- BUTTONS -->
     <div class="flex justify-between gap-2 mt-6">
-      <a
-        href="/singleview"
-        class="border-2 border-[var(--color-sort)] rounded-full px-4 py-1 font-[Poppins] text-[14px] hover:bg-[var(--color-orange-accent)] hover:border-[var(--color-orange-accent)] hover:text-[var(--color-hvid)] transition"
-      >
-        Læs mere
-      </a>
-      <a
-        href="/tilmeld"
-        class="border-2 border-[var(--color-sort)] rounded-full px-4 py-1 font-[Poppins] text-[14px] hover:bg-[var(--color-orange-accent)] hover:border-[var(--color-orange-accent)] hover:text-[var(--color-hvid)] transition"
-      >
-        Tilmeld rejse
-      </a>
+      <Button href="/singleview" text="Læs mere" color="sort" size="sm" />
+      <Button href="/tilmeld" text="Tilmeld rejse" color="sort" size="sm" />
     </div>
   </div>
 </div>
