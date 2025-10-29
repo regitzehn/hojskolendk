@@ -1,73 +1,117 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import Button from "../components/Button.astro";
 ---
 
 <MainLayout title="Asien & Oceanien">
 
- <!-- HERO SECTION -->
+<!-- HERO SECTION -->
 <section
-class="relative w-full min-h-[80vh] bg-cover bg-center text-[var(--color-hvid)] flex flex-col justify-end"
-style="background-image: url('src/assets/images/singleview.webp');"
+  class="relative w-full min-h-[80vh] bg-cover bg-center text-[var(--color-hvid)] flex flex-col justify-end"
+  style="background-image: url('src/assets/images/singleview.webp');"
 >
-<div class="absolute inset-0 bg-[rgba(0,0,0,0.35)]"></div>
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-[rgba(0,0,0,0.35)]"></div>
 
-<div class="relative z-10 content-wrapper py-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
-  <!-- ^ we changed items-start → items-end -->
-
-  <!-- LEFT SIDE -->
-  <div>
-    <h2 class="h2 mb-3">ASIEN & OCEANIEN</h2>
-    <h3 class="h3 mb-6 leading-snug">
-      MALDIVERNE<br />
-      AUSTRALIEN<br />
-      SRI LANKA<br />
-      JAPAN<br />
-      BALI<br />
-      GILI ISLANDS
-    </h3>
-
+  <!-- Content Wrapper -->
+  <div class="relative z-10 content-wrapper py-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
+    
+    <!-- LEFT SIDE -->
     <div>
-      <p class="font-[Poppins] leading-relaxed mb-2"><strong>VARIGHED:</strong> ca. 90 dage</p>
-      <p class="font-[Poppins] leading-relaxed mb-2"><strong>INTRODAGE:</strong> Dubai/Doha/Bangkok/Singapore</p>
-      <p class="font-[Poppins] leading-relaxed mb-2"><strong>MALDIVERNE:</strong> Dhiffushi</p>
-      <p class="font-[Poppins] leading-relaxed mb-2"><strong>SRI LANKA:</strong> Dambulla, Kandy, Ella & Weligama</p>
-      <p class="font-[Poppins] leading-relaxed mb-2"><strong>INDONESIEN:</strong> Bali & Gili Islands</p>
-      <p class="font-[Poppins] leading-relaxed mb-2"><strong>JAPAN:</strong> Tokyo, Kyoto, Hiroshima, Osaka & Nara</p>
-      <p class="font-[Poppins] leading-relaxed"><strong>AUSTRALIEN:</strong> Byron Bay</p>
-    </div>
-  </div>
+      <h2 class="h2 mb-3">ASIEN & OCEANIEN</h2>
+      <h3 class="h3 mb-6 leading-snug">
+        MALDIVERNE<br />
+        AUSTRALIEN<br />
+        SRI LANKA<br />
+        JAPAN<br />
+        BALI<br />
+        GILI ISLANDS
+      </h3>
 
-  <!-- RIGHT SIDE (PRICES) -->
-  <div class="font-[Poppins] md:text-right flex flex-col items-start md:items-end justify-end">
-    <!-- ^ added justify-end so it aligns at the bottom -->
-    <h3 class="font-[Montserrat] text-[22px] mb-3 md:text-right">PRISER</h3>
-
-    <div class="space-y-1 w-full md:w-auto">
-      <div class="flex justify-between md:justify-end gap-4 md:w-[280px]">
-        <span>15 januar 2026</span>
-        <span>74.900 DKK</span>
-        <span class="text-[var(--color-orange-accent)]">●</span>
-      </div>
-      <div class="flex justify-between md:justify-end gap-4 md:w-[280px]">
-        <span>14 januar 2027</span>
-        <span>77.400 DKK</span>
-        <span class="text-[var(--color-gron-1)]">●</span>
-      </div>
-      <div class="flex justify-between md:justify-end gap-4 md:w-[280px]">
-        <span>13 januar 2028</span>
-        <span>79.900 DKK</span>
-        <span class="text-[var(--color-gron-1)]">●</span>
-      </div>
-      <div class="flex justify-between md:justify-end gap-4 md:w-[280px]">
-        <span>12 januar 2029</span>
-        <span>82.400 DKK</span>
-        <span class="text-[var(--color-gron-1)]">●</span>
+      <div class="font-[Poppins] leading-relaxed">
+        <p class="mb-2">
+          <span class="font-[Montserrat] font-semibold">VARIGHED:</span> ca. 90 dage
+        </p>
+        <p class="mb-2">
+          <span class="font-[Montserrat] font-semibold">INTRODAGE:</span> Dubai/Doha/Bangkok/Singapore
+        </p>
+        <p class="mb-2">
+          <span class="font-[Montserrat] font-semibold">MALDIVERNE:</span> Dhiffushi
+        </p>
+        <p class="mb-2">
+          <span class="font-[Montserrat] font-semibold">SRI LANKA:</span> Dambulla, Kandy, Ella & Weligama
+        </p>
+        <p class="mb-2">
+          <span class="font-[Montserrat] font-semibold">INDONESIEN:</span> Bali & Gili Islands
+        </p>
+        <p class="mb-2">
+          <span class="font-[Montserrat] font-semibold">JAPAN:</span> Tokyo, Kyoto, Hiroshima, Osaka & Nara
+        </p>
+        <p>
+          <span class="font-[Montserrat] font-semibold">AUSTRALIEN:</span> Byron Bay
+        </p>
       </div>
     </div>
 
-    <p class="text-sm mt-3 md:text-right">Flybillet tur/retur er inkluderet.</p>
+    <!-- RIGHT SIDE (PRICES) -->
+    <div class="font-[Poppins] flex flex-col justify-end md:items-end">
+      <div class="w-full md:w-[380px]">
+        <h3 class="font-[Montserrat] text-[22px] mb-4 font-semibold">PRISER</h3>
+
+        <!-- Table Header (desktop only) -->
+        <div class="hidden md:grid grid-cols-3 gap-6 font-[Montserrat] text-[15px] font-semibold mb-2">
+          <span class="text-bold">AFREJSE</span>
+          <span class="text-center">CA. PRIS</span>
+          <span class="text-right">STATUS</span>
+        </div>
+
+        <!-- Price List -->
+        <div class="space-y-[6px] text-[15px] font-[Poppins]">
+          <div class="grid grid-cols-3 gap-6 items-center">
+            <span>15 januar 2026</span>
+            <span class="text-center">74.900 DKK</span>
+            <span class="flex justify-end">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <circle cx="7" cy="7" r="7" fill="var(--color-orange-accent)" />
+              </svg>
+            </span>
+          </div>
+          <div class="grid grid-cols-3 gap-6 items-center">
+            <span>14 januar 2027</span>
+            <span class="text-center">77.400 DKK</span>
+            <span class="flex justify-end">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <circle cx="7" cy="7" r="7" fill="var(--color-gron-1)" />
+              </svg>
+            </span>
+          </div>
+          <div class="grid grid-cols-3 gap-6 items-center">
+            <span>13 januar 2028</span>
+            <span class="text-center">79.900 DKK</span>
+            <span class="flex justify-end">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <circle cx="7" cy="7" r="7" fill="var(--color-gron-1)" />
+              </svg>
+            </span>
+          </div>
+          <div class="grid grid-cols-3 gap-6 items-center">
+            <span>12 januar 2029</span>
+            <span class="text-center">82.400 DKK</span>
+            <span class="flex justify-end">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <circle cx="7" cy="7" r="7" fill="var(--color-gron-1)" />
+              </svg>
+            </span>
+          </div>
+        </div>
+
+        <p class="text-sm mt-4 text-right font-[Poppins]">
+          Flybillet tur/retur er inkluderet.
+        </p>
+      </div>
+    </div>
+
   </div>
-</div>
 </section>
 
   <!-- WHITE SECTION -->
@@ -102,12 +146,7 @@ style="background-image: url('src/assets/images/singleview.webp');"
           <div class="bg-[var(--color-gron-2)] text-[var(--color-white)] rounded-xl p-8 w-full text-center font-[Poppins] shadow-md">
             <p>💚 <em>Her kommer gruppemedlemmets “Reserver en plads” komponent</em></p>
           </div>
-          <a
-            href="#"
-            class="inline-block border-2 border-[var(--color-white)] rounded-full px-8 py-2 font-[Poppins] text-[16px] hover:bg-[var(--color-orange-accent)] hover:border-[var(--color-orange-accent)] hover:text-[var(--color-hvid)] transition"
-          >
-            RESERVER
-          </a>
+          <Button href="/reserver" text="RESERVER" color="hvid" size="lg"/>
         </div>
 
         <!-- BOX 2 + BUTTON -->
@@ -115,12 +154,7 @@ style="background-image: url('src/assets/images/singleview.webp');"
           <div class="bg-[var(--color-gron-2)] text-[var(--color-white)] rounded-xl p-8 w-full text-center font-[Poppins] shadow-md">
             <p>💚 <em>Her kommer gruppemedlemmets “Tilmeld dig rejsen” komponent</em></p>
           </div>
-          <a
-            href="#"
-            class="inline-block border-2 border-[var(--color-white)] rounded-full px-8 py-2 font-[Poppins] text-[16px] hover:bg-[var(--color-orange-accent)] hover:border-[var(--color-orange-accent)] hover:text-[var(--color-hvid)] transition"
-          >
-            TILMELD
-          </a>
+          <Button href="/tilmeld" text="TILMELD" color="hvid" size="lg"/>
         </div>
 
       </div>
