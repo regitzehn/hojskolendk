@@ -1,0 +1,57 @@
+---
+
+ // @ts-nocheck
+ /* eslint-disable */
+ 
+const quotes = [
+  { text: "At tage på højskole i udlandet var det bedste valg, jeg nogensinde har taget.", author: "Andreas, 24 år" },
+  { text: "Man lærer så meget mere, end man tror – både om kultur og om sig selv.", author: "Freja, 21 år" },
+  { text: "Alt var så godt planlagt, og vi havde stadig masser af frihed til eventyr!", author: "Emma, 20 år" },
+  { text: "Det var den fedeste oplevelse i mit liv – jeg lærte så meget om mig selv og verden!", author: "Sofie, 21 år" },
+  { text: "Jeg kom hjem med nye perspektiver – og en kæmpe trang til at rejse igen!", author: "Rasmus, 23 år" },
+  { text: "Jeg havde aldrig troet, at undervisning og eventyr kunne gå så godt hånd i hånd!", author: "Oliver, 20 år" },
+  { text: "Jeg fik venner for livet – og en helt ny forståelse for, hvordan andre mennesker lever.", author: "Maria, 22 år" },
+  { text: "Det føltes ikke som skole – mere som et fællesskab fuld af oplevelser og grin.", author: "Jonas, 19 år" },
+];
+
+---
+
+<div class="quote-banner bg-[var(--color-gron-2)] font-[Montserrat] py-12 overflow-hidden">
+  <div class="content-wrapper relative">
+<div class="animate-scroll flex whitespace-nowrap">
+  <!-- Første sæt citater -->
+  {quotes.map((quote, i) => (
+    <div key={`quote1-${i}`} class="inline-block px-8">
+      <span class="text-xl text-[var(--color-sort)]">"{quote.text}"</span>
+      <span class="text-l text-[var(--color-sort)] opacity-90 ml-2">– {quote.author}</span>
+    </div>
+  ))}
+  <!-- Duplikerede citater til seamless scroll -->
+  {quotes.map((quote, i) => (
+    <div key={`quote2-${i}`} class="inline-block px-8">...</div>
+  ))}
+</div>
+  </div>
+</div>
+
+<style>
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  display: inline-flex;
+  animation: scroll 40s linear infinite;
+  will-change: transform;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
+
+</style>
