@@ -1,5 +1,55 @@
 ---
----
-<div>
-    <button class="border-2 border-black"><slot /></button>
-</div>
+/*
+🧡 HÖJSKOLENDK — Button Component
+──────────────────────────────────────────
+→ Bruges til alle knapper på websitet for at holde stilen ensartet.
+
+🔹 Props (kan tilpasses):
+- href       → Link til side (standard: "#")
+- text       → Tekst på knappen
+- type       → "button" eller "submit" (til forms)
+- color      → "hvid" eller "sort" (ændrer tekst og kantfarve)
+- size       → "sm", "md", "lg" (styrer padding og tekststørrelse)
+- uppercase  → true / false (om teksten skal være VERSALER)
+
+🔹 Eksempler på brug:
+<Button href="/tilmeld" text="Tilmeld" color="hvid" />
+<Button href="/infomoder" text="Infomøder" color="hvid" />
+<Button href="/rejser" text="Læs mere" color="sort" />
+<Button href="#" text="Send" size="lg" color="sort" uppercase={false} />
+
+──────────────────────────────────────────
+*/
+
+const {
+    href = "#",
+    text = "Button",
+    type = "button",
+    color = "hvid",
+    size = "md",
+    uppercase = true,
+  } = Astro.props;
+  ---
+  
+  <a
+    href={href}
+    type={type}
+    class:list={[
+      // base styles (match .btn-outline)
+      "inline-block border-[3px] rounded-full font-[Poppins] font-medium tracking-wide transition-all duration-300 text-center",
+      uppercase && "uppercase",
+  
+      // size (match padding from .btn-outline)
+      size === "sm" && "px-4 py-1 text-[14px]",
+      size === "md" && "px-5 py-2 text-[15px]",
+      size === "lg" && "px-5 py-2 text-[16px]",
+  
+      // color variants — exact match to header .btn-outline
+      color === "hvid" &&
+        "border-[var(--color-hvid)] text-[var(--color-hvid)] bg-transparent hover:bg-[var(--color-orange-accent)] hover:border-[var(--color-hvid)] hover:text-[var(--color-hvid)]",
+      color === "sort" &&
+        "border-[var(--color-sort)] text-[var(--color-sort)] bg-transparent hover:bg-[var(--color-orange-accent)] hover:border-[var(--color-orange-accent)] hover:text-[var(--color-hvid)]",
+    ]}
+  >
+    {text}
+  </a>

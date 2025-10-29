@@ -1,3 +1,7 @@
+---
+import Button from './Button.astro';
+---
+
 <header class="fixed top-0 left-0 w-full flex justify-between items-center px-8 py-4 bg-transparent z-50">
     <!-- Logo -->
     <a href="/" class="flex items-center">
@@ -6,8 +10,8 @@
   
     <!-- Desktop Navigation -->
     <nav class="hidden md:flex items-center gap-6 text-[var(--color-hvid)] font-sans uppercase tracking-wide text-[16px]">
-      <a href="/tilmeld" class="btn-outline">Tilmeld</a>
-      <a href="#infomoder" class="btn-outline">Infomøder</a>
+        <Button href="/tilmeld" text="Tilmeld" color="hvid" size="lg"/>
+        <Button href="/infomøder" text="infomøder" color="hvid" size="lg"/>
       <a href="/ophold" class="link">Højskoleophold</a>
       <a href="/priser" class="link">Priser</a>
       <a href="#omos" class="link">Om os</a>
@@ -28,7 +32,7 @@
       id="mobileMenu"
       class="fixed top-0 right-0 h-screen w-0 overflow-hidden flex flex-col items-center justify-center gap-6 text-[var(--color-hvid)] transition-all duration-500 backdrop-blur-2xl bg-[rgba(54,47,51,0.6)] md:hidden z-[50]"
     >
-      <a href="/tilmeld" class="btn-outline">Tilmeld</a>
+    <Button href="/tilmeld" text="Tilmeld" color="hvid" />
       <a href="#infomoder" class="btn-outline">Infomøder</a>
       <a href="/ophold" class="link text-xl">Højskoleophold</a>
       <a href="/priser" class="link text-xl">Priser</a>
