@@ -1,0 +1,90 @@
+---
+import Button from "./Button.astro"
+---
+
+<section class="content-wrapper my-16 md:my-24 lg:my-32 fade-up-on-scroll text-center">
+  <h2 class="h2 pb-4">Følg os på Instagram</h2>
+
+  <p class="p max-w-[55ch] mx-auto pb-6 text-[var(--color-sort)]">
+    Få et kig bag kulisserne, og oplev livet på vores højskoleophold i udlandet –
+    se hvordan fællesskab, rejser og eventyr ser ud i virkeligheden.
+  </p>
+
+  <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
+    <!-- 🟢 Post 1 -->
+    <blockquote
+      class="instagram-media"
+      data-instgrm-permalink="https://www.instagram.com/p/DO_ZCITgdkK/?utm_source=ig_embed&utm_campaign=loading"
+      data-instgrm-version="14"
+      style="background:#FFF; border:0; border-radius:12px; margin:0 auto; max-width:540px; width:100%;"
+    ></blockquote>
+
+    <!-- 🟢 Post 2 -->
+    <blockquote
+      class="instagram-media"
+      data-instgrm-permalink="https://www.instagram.com/p/DPeSlC1CV_j/?utm_source=ig_embed&utm_campaign=loading"
+      data-instgrm-version="14"
+      style="background:#FFF; border:0; border-radius:12px; margin:0 auto; max-width:540px; width:100%;"
+    ></blockquote>
+
+    <!-- 🟢 Post 3 -->
+    <blockquote
+      class="instagram-media"
+      data-instgrm-permalink="https://www.instagram.com/p/DOoN5GKiJtT/?utm_source=ig_embed&utm_campaign=loading"
+      data-instgrm-version="14"
+      style="background:#FFF; border:0; border-radius:12px; margin:0 auto; max-width:540px; width:100%;"
+    ></blockquote>
+  </div>
+
+  <div class="mt-12 flex justify-center">
+    <Button href="/ophold" text="VÆLG DIT EVENTYR" color="sort" size="lg" />
+  </div>
+
+  <!-- Instagram Embed Script -->
+  <script async src="//www.instagram.com/embed.js"></script>
+
+  <style>
+    @keyframes fade-up {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-up-on-scroll {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .fade-up-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* 🧼 Hide Instagram captions */
+    .instagram-media p {
+      display: none !important;
+    }
+  </style>
+
+  <script>
+    const fadeEls = document.querySelectorAll(".fade-up-on-scroll");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    fadeEls.forEach((el) => observer.observe(el));
+  </script>
+</section>
