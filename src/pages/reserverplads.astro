@@ -1,0 +1,183 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout title="Reservér en plads">
+  <section
+    class="relative min-h-screen bg-cover bg-center flex flex-col justify-center items-center text-center"
+    style="background-image: url('src/assets/images/reserver3.webp');"
+  >
+    <!-- Overlay -->
+    
+
+    <!-- Form Container -->
+    <div class="relative z-10 max-w-[650px] w-full px-6 py-16">
+      <!-- Progress Circle -->
+      <div class="flex flex-col items-center mb-8">
+        <svg width="60" height="60" class="transform -rotate-90">
+          <circle cx="30" cy="30" r="25" stroke="var(--color-orange-accent)" stroke-width="6" fill="transparent"></circle>
+          <circle id="progressCircle" cx="30" cy="30" r="25"
+            stroke="var(--color-gron-1)" stroke-width="6"
+            fill="transparent" stroke-linecap="round"
+            stroke-dasharray="157" stroke-dashoffset="157"></circle>
+        </svg>
+        <p class="mt-2 text-[14px] font-[Poppins]" id="progressText">0%</p>
+        <p class="text-[12px] text-[var(--color-sort)]" id="stepLabel">Trin 1/5</p>
+      </div>
+
+      <!-- 🪜 Multi-Step Form -->
+      <form
+        id="multiStepForm"
+        class="font-[Poppins] text-[var(--color-sort)] px-6 py-8 md:px-8 md:py-10 transition-all duration-500"
+      >
+        <!-- Step 1 -->
+        <div class="form-step active">
+          <h2 class="text-2xl md:text-3xl font-[Montserrat] mb-6">Hvilket ophold vil du reservere?</h2>
+          <select class="border-2 border-[var(--color-sort)] rounded-full px-4 py-2 w-full mb-6">
+            <option>Vælg ønsket ophold</option>
+            <option>Asien & Oceanien</option>
+            <option>Latinamerika</option>
+            <option>Sydasien & Ø-eventyr</option>
+            <option>Nordamerika & Stillehavet</option>
+            <option>Jorden Rundt</option>
+          </select>
+
+          <div class="flex justify-center">
+            <button
+              type="button"
+              class="next-btn border-2 border-[var(--color-sort)] text-[var(--color-sort)] rounded-full px-8 py-2 hover:bg-[var(--color-orange-accent)] hover:text-[var(--color-hvid)] transition"
+            >
+              NÆSTE
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="form-step hidden">
+          <h2 class="text-2xl md:text-3xl font-[Montserrat] mb-6">Navn og Email</h2>
+          <input type="text" placeholder="Fulde navn" class="border-2 border-[var(--color-sort)] rounded-xl px-4 py-2 w-full mb-3" />
+          <input type="email" placeholder="Email" class="border-2 border-[var(--color-sort)] rounded-xl px-4 py-2 w-full mb-6" />
+
+          <div class="flex justify-center gap-4">
+            <button type="button" class="back-btn border-2 border-[var(--color-sort)] text-[var(--color-sort)] rounded-full px-8 py-2 hover:bg-[var(--color-orange-accent)] hover:text-[var(--color-hvid)] transition">TILBAGE</button>
+            <button type="button" class="next-btn border-2 border-[var(--color-sort)] text-[var(--color-sort)] rounded-full px-8 py-2 hover:bg-[var(--color-gron-1)] hover:text-[var(--color-hvid)] transition">NÆSTE</button>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="form-step hidden">
+          <h2 class="text-2xl md:text-3xl font-[Montserrat] mb-6">Telefonnummer</h2>
+          <input type="tel" placeholder="Telefonnummer" class="border-2 border-[var(--color-sort)] rounded-xl px-4 py-2 w-full mb-6" />
+
+          <div class="flex justify-center gap-4">
+            <button type="button" class="back-btn border-2 border-[var(--color-sort)] text-[var(--color-sort)] rounded-full px-8 py-2 hover:bg-[var(--color-orange-accent)] hover:text-[var(--color-hvid)] transition">TILBAGE</button>
+            <button type="button" class="next-btn border-2 border-[var(--color-sort)] text-[var(--color-sort)] rounded-full px-8 py-2 hover:bg-[var(--color-gron-1)] hover:text-[var(--color-hvid)] transition">NÆSTE</button>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="form-step hidden">
+          <h2 class="text-2xl md:text-3xl font-[Montserrat] mb-6">Evt. bemærkninger</h2>
+          <textarea placeholder="Skriv her..." class="border-2 border-[var(--color-sort)] rounded-xl px-4 py-2 w-full h-28 mb-6"></textarea>
+
+          <div class="flex justify-center gap-4">
+            <button type="button" class="back-btn border-2 border-[var(--color-sort)] text-[var(--color-sort)] rounded-full px-8 py-2 hover:bg-[var(--color-orange-accent)] hover:text-[var(--color-hvid)] transition">TILBAGE</button>
+            <button type="button" class="next-btn border-2 border-[var(--color-sort)] text-[var(--color-sort)] rounded-full px-8 py-2 hover:bg-[var(--color-gron-1)] hover:text-[var(--color-hvid)] transition">NÆSTE</button>
+          </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="form-step hidden">
+          <h2 class="text-2xl md:text-3xl font-[Montserrat] mb-6">Bekræftelse</h2>
+          <p class="text-[15px] mb-6">
+            Når du indsender, reserverer du din plads gratis og uforpligtende.  
+            Du får en bekræftelse på mail inden for 24 timer.
+          </p>
+
+          <div class="flex justify-center gap-4">
+            <button type="button" class="back-btn border-2 border-[var(--color-sort)] text-[var(--color-sort)] rounded-full px-8 py-2 hover:bg-[var(--color-orange-accent)] hover:text-[var(--color-hvid)] transition">TILBAGE</button>
+            <button type="submit" class="border-2 border-[var(--color-sort)] text-[var(--color-sort)] rounded-full px-8 py-2 hover:bg-[var(--color-gron-1)] hover:text-[var(--color-hvid)] transition">SEND</button>
+          </div>
+        </div>
+      </form>
+
+      <!-- ✅ Thank You Message -->
+      <div id="thankYouMessage" class="hidden mt-10 text-center bg-[rgba(255,255,255,0.95)] rounded-2xl shadow-2xl p-8 text-[var(--color-sort)]">
+        <h2 class="text-3xl font-[Montserrat] mb-4">Tak for din reservation!</h2>
+        <p class="p max-w-[50ch] mx-auto">
+          Vi vender tilbage inden for 24 timer med bekræftelse.  
+          Vi glæder os til at tage dig med på dit næste eventyr 🌍
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const steps = document.querySelectorAll(".form-step");
+    const nextBtns = document.querySelectorAll(".next-btn");
+    const backBtns = document.querySelectorAll(".back-btn");
+    const circle = document.getElementById("progressCircle");
+    const progressText = document.getElementById("progressText");
+    const stepLabel = document.getElementById("stepLabel");
+    const thankYou = document.getElementById("thankYouMessage");
+    const form = document.getElementById("multiStepForm");
+
+    let currentStep = 0;
+
+    const updateForm = () => {
+      steps.forEach((step, index) => {
+        step.classList.toggle("active", index === currentStep);
+        step.classList.toggle("hidden", index !== currentStep);
+      });
+
+      const percent = ((currentStep + 1) / steps.length) * 100;
+      const circumference = 157;
+      const offset = circumference - (percent / 100) * circumference;
+      circle.style.strokeDashoffset = offset.toString();
+      progressText.textContent = `${Math.round(percent)}%`;
+      stepLabel.textContent = `Trin ${currentStep + 1}/${steps.length}`;
+    };
+
+    nextBtns.forEach(btn =>
+      btn.addEventListener("click", () => {
+        if (currentStep < steps.length - 1) {
+          currentStep++;
+          updateForm();
+        }
+      })
+    );
+
+    backBtns.forEach(btn =>
+      btn.addEventListener("click", () => {
+        if (currentStep > 0) {
+          currentStep--;
+          updateForm();
+        }
+      })
+    );
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      form.classList.add("hidden");
+      thankYou.classList.remove("hidden");
+    });
+
+    updateForm();
+  </script>
+
+  <style>
+    .form-step {
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+    .form-step.hidden {
+      display: none;
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    .form-step.active {
+      display: block;
+      opacity: 1;
+      transform: translateX(0);
+    }
+  </style>
+</MainLayout>

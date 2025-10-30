@@ -1,0 +1,132 @@
+---
+import Button from '../components/Button.astro';
+import MainLayout from '../layouts/MainLayout.astro';
+import Trin from '../components/Trin.astro';
+---
+
+<MainLayout title="Reservér en plads">
+  <!-- 🌍 Header Section (Parallax) -->
+  <section
+    class="relative w-full bg-fixed bg-center bg-cover text-[var(--color-hvid)] py-28 text-center"
+    style="background-image: url('src/assets/images/reserver.webp');"
+  >
+    <div class="absolute inset-0 bg-[rgba(0,0,0,0.6)]"></div>
+
+    <!-- ⬇️ Fade only on inner content, NOT the section -->
+    <div class="relative z-10 content-wrapper max-w-[800px] mx-auto fade-up-on-scroll">
+      <h2 class="h2 mt-20 pb-4">Reservér en plads – Højskole i Udlandet</h2>
+      <p class="p max-w-[60ch] mx-auto">
+        Overvejer du at tilmelde dig et af vores eventyrlige højskoleophold i udlandet?
+        Det er en god idé at reservere en plads – det er gratis, uforpligtende og holder dig opdateret.
+      </p>
+    </div>
+  </section>
+
+  <!-- 📋 Trin Grid Section (3 on top, 2 centered under) -->
+  <section class="content-wrapper my-16 md:my-24 lg:my-32 text-center">
+    <div class="space-y-8 fade-up-on-scroll">
+      <!-- Row 1 -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+        <div class="max-w-[420px] w-full">
+          <Trin
+            title="1. Reservation er ikke garanti"
+            text="En reservation er ikke en garanti for en plads – men du får opdateringer og fordele."
+            shade="var(--color-gron-1)"
+          />
+        </div>
+        <div class="max-w-[420px] w-full">
+          <Trin
+            title="2. Gratis og uforpligtende"
+            text="Det koster ingenting at reservere en plads, og du binder dig ikke til noget."
+            shade="var(--color-gron-2)"
+          />
+        </div>
+        <div class="max-w-[420px] w-full">
+          <Trin
+            title="3. Få nyheder om afgangen"
+            text="Du får besked, når der er få pladser tilbage eller ændringer i afgangen."
+            shade="var(--color-gron-3)"
+          />
+        </div>
+      </div>
+
+      <!-- Row 2 centered -->
+      <div class="flex flex-wrap justify-center gap-8">
+        <div class="max-w-[420px] w-full md:w-[45%] lg:w-[30%]">
+          <Trin
+            title="4. Sikr din plads"
+            text="Du er først sikret, når du har tilmeldt dig og betalt depositum (3.000 DKK)."
+            shade="var(--color-gron-1)"
+          />
+        </div>
+        <div class="max-w-[420px] w-full md:w-[45%] lg:w-[30%]">
+          <Trin
+            title="5. Venteliste"
+            text="Er afgangen udsolgt, kan du komme på venteliste ved at tilmelde dig."
+            shade="var(--color-gron-2)"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 💬 CTA Section (Parallax) -->
+  <section
+    class="relative w-full bg-fixed bg-center bg-cover text-[var(--color-hvid)] py-28 text-center"
+    style="background-image: url('src/assets/images/reserver.webp');"
+  >
+    <div class="absolute inset-0 bg-[rgba(0,0,0,0.6)]"></div>
+
+    <!-- ⬇️ Fade only on the inner wrapper -->
+    <div class="relative z-10 max-w-[800px] mx-auto px-6 fade-up-on-scroll">
+      <p class="p max-w-[60ch] mx-auto mb-10">
+        Når du reserverer, udfylder du en kort formular – vi bekræfter normalt din reservation
+        inden for <strong>24 timer</strong>. Din reservation gælder først, når du har modtaget
+        en bekræftelse på mail.
+      </p>
+      <Button href="/reserverplads" text="RESERVÉR EN PLADS" color="hvid" size="lg" />
+    </div>
+  </section>
+
+  <!-- ✨ Anim + Parallax helpers -->
+  <style>
+    @keyframes fade-up {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up-on-scroll {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .fade-up-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    section.bg-fixed {
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover;
+    }
+
+    /* Mobile/Safari fallback */
+    @media (max-width: 1024px) {
+      section.bg-fixed { background-attachment: scroll; }
+    }
+  </style>
+
+  <script>
+    // Fade-up on scroll
+    const fadeEls = document.querySelectorAll('.fade-up-on-scroll');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    fadeEls.forEach((el) => observer.observe(el));
+  </script>
+</MainLayout>
