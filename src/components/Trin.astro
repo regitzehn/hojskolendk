@@ -1,39 +1,25 @@
-<section
-  class="trin-container flex flex-col items-center justify-center gap-6 min-h-[40vh] p-4 font-montserrat text-white"
-  style="background-image: url('public/boat.png'); background-size: cover; background-position: center; background-repeat: no-repeat;"
+---
+/*
+💚 Trin Component — bruges til “Sådan fungerer det (trin for trin)” sektionen
+
+🔹 Props:
+- title → Overskrift (Montserrat, bold)
+- text → Undertekst (Poppins, normal)
+- shade → Baggrundsfarve (standard: var(--color-gron-2))
+──────────────────────────────────────────
+*/
+
+const {
+  title = "Trin titel",
+  text = "Trinbeskrivelse her...",
+  shade = "var(--color-gron-2)",
+} = Astro.props;
+---
+
+<div
+  class="rounded-2xl border-[3px] border-[var(--color-sort)] shadow-md p-4 text-center max-w-[500px] w-full"
+  style={`background-color: ${shade};`}
 >
-  <header class="w-full text-center mb-4">
-    <h1 class="trin-title font-extrabold text-3xl md:text-5xl lg:text-6xl leading-tight">
-      SÅDAN FUNGERER DET (TRIN FOR TRIN)
-    </h1>
-    <p class="trin-lead mt-3 text-lg md:text-xl max-w-[70ch] mx-auto">
-      Få overblik over, hvordan du kan komme med på en rejse med HøjskolenDK. Vælg, om du vil
-      reservere en plads, tilmelde dig, eller blot høre mere.
-    </p>
-  </header>
-
-  <div class="box box--one w-[420px] max-w-[90vw] h-[110px] rounded-xl flex items-center justify-center shadow-lg font-semibold text-[#111827] border-2 border-[#362f33] bg-[#bbff9d]">
-    <div class="box-content text-center px-4">
-      <div class="box-title text-lg md:text-xl">1. Reserver en plads</div>
-      <p class="box-sub text-sm md:text-base mt-1">Find din drømmerejse og reserver en plads – helt uforpligtende. Så holder vi en plads til dig, mens du beslutter dig.</p>
-    </div>
-  </div>
-
-  <div class="box box--two w-[420px] max-w-[90vw] h-[110px] rounded-xl flex items-center justify-center shadow-lg font-semibold text-[#111827] border-2 border-[#362f33] bg-[#d6ffc3]">
-    <div class="box-content text-center px-4">
-      <div class="box-title text-lg md:text-xl">2. Tilmeld dig rejsen</div>
-      <p class="box-sub text-sm md:text-base mt-1">Klar til eventyret? Udfyld tilmeldingsformularen og køb din billet. Så er du officielt med på holdet!</p>
-    </div>
-  </div>
-
-  <div class="box box--three w-[420px] max-w-[90vw] h-[110px] rounded-xl flex items-center justify-center shadow-lg font-semibold text-[#111827] border-2 border-[#362f33] bg-[#edffe5]">
-    <div class="box-content text-center px-4">
-      <div class="box-title text-lg md:text-xl">3. Deltag i et infomøde (valgfrit)</div>
-      <p class="box-sub text-sm md:text-base mt-1">Vil du høre mere først? Tilmeld dig et af vores infomøder og få svar på alle dine spørgsmål.</p>
-    </div>
-  </div>
-
-  <button class="btn btn--primary mt-12 px-6 py-3 rounded-full border-2 border-white text-white font-bold hover:scale-[.995] transition-transform">
-    VÆLG DIT EVENTYR
-  </button>
-</section>
+  <h4 class="font-[Montserrat] font-semibold text-[18px] mb-2  text-[var(--color-black)]">{title}</h4>
+  <p class="font-[Poppins] text-[15px] leading-relaxed  text-[var(--color-black)]">{text}</p>
+</div>
