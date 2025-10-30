@@ -5,116 +5,156 @@ import PriceCard from "../components/PriceCard.astro";
 
 <MainLayout title="Priser på Højskoler i Udlandet">
 
-  <!-- Hero Section -->
+  <!-- 🌄 HERO (Parallax background) -->
   <section
-    class="relative w-full h-[80vh] bg-cover bg-center flex flex-col justify-center items-center text-center text-[var(--color-hvid)]"
+    class="relative w-full h-[80vh] bg-fixed bg-center bg-cover flex flex-col justify-center items-center text-center text-[var(--color-hvid)]"
     style="background-image: url('src/assets/images/priser1.webp');"
   >
-    <!-- Overlay -->
     <div class="absolute inset-0 bg-[rgba(0,0,0,0.35)]"></div>
-
-    <!-- Content -->
-    <div class="relative z-10 content-wrapper">
-      <h1 class="h1 font-[Montserrat] mb-4">PRISER PÅ HØJSKOLER I UDLANDET</h1>
+    <!-- Animate only the content -->
+    <div class="relative z-10 content-wrapper fade-up-on-scroll">
+      <h1 class="h1 font-[Montserrat] mb-4">
+        PRISER PÅ HØJSKOLER I UDLANDET
+      </h1>
     </div>
   </section>
 
-  <!-- Intro Section -->
-  <section class="content-wrapper my-16 md:my-24 lg:my-32 text-[var(--color-sort)]">
-    <h2 class="h2 pb-4">Priserne samlet ét sted</h2>
-    <p class="p max-w-[65ch]">
-      Vi har samlet alle priser på vores eventyrlige ophold/rejser på denne side, for at skabe et fint overblik for dig der er nysgerrig.
-      <br><br>
-      Husk at du på vores destinationssider kan læse meget mere om alle de fede adventure-aktiviteter der er inkluderet på højskoleophold, og alt vedr. program og indhold, fag og undervisning, lokal transport, fridage, lommepenge og meget andet.
-    </p>
+  <!-- 🧭 INTRO (White background) -->
+  <section class="relative z-20 bg-[var(--color-hvid)] text-[var(--color-sort)] py-24 md:py-32 lg:py-40 shadow-lg">
+    <div class="content-wrapper max-w-[1100px] mx-auto fade-up-on-scroll">
+      <h2 class="h2 pb-4">Priserne samlet ét sted</h2>
+      <p class="p max-w-[65ch]">
+        Vi har samlet alle priser på vores eventyrlige ophold/rejser på denne side, for at skabe et fint overblik for dig der er nysgerrig.
+        <br><br>
+        Husk at du på vores destinationssider kan læse meget mere om alle de fede adventure-aktiviteter der er inkluderet på højskoleophold, og alt vedr. program og indhold, fag og undervisning, lokal transport, fridage, lommepenge og meget andet.
+      </p>
+    </div>
   </section>
 
-  <!-- Cards Section -->
-  <!-- Price Cards Section -->
+  <!-- 💸 PRICE CARDS (Parallax background) -->
   <section
-  class="relative w-full bg-cover bg-center bg-no-repeat py-24 text-[var(--color-hvid)]"
-  style="background-image: url('src/assets/images/priser2.webp');"
->
-  <!-- Overlay -->
-  <div class="absolute inset-0 bg-[rgba(0,0,0,0.25)]"></div>
+    class="relative w-full bg-fixed bg-center bg-cover py-24 text-[var(--color-hvid)]"
+    style="background-image: url('src/assets/images/priser2.webp');"
+  >
+    <!-- Keep background always visible -->
+    <div class="absolute inset-0 bg-[rgba(0,0,0,0.25)]"></div>
 
-  <!-- Content -->
-  <div class="relative z-10 content-wrapper">
-    <!-- Scrollable cards -->
-    <div class="cards-scroll pb-6 scrollbar-hide items-start">
-      <div class="card-item">
-        <PriceCard
-          title="BRASILIEN<br>COLOMBIA<br>COSTA RICA<br>MEXICO"
-          background="src/assets/images/brazil-card.png"
-        />
+    <!-- Only fade in content -->
+    <div class="relative z-10 content-wrapper fade-up-on-scroll">
+      <div class="cards-scroll flex gap-8 overflow-x-auto pb-6 scrollbar-hide">
+        <div class="card-item flex-shrink-0 fade-up-on-scroll">
+          <PriceCard
+            title="BRASILIEN<br>COLOMBIA<br>COSTA RICA<br>MEXICO"
+            background="src/assets/images/brazil-card.png"
+          />
+        </div>
+        <div class="card-item flex-shrink-0 fade-up-on-scroll">
+          <PriceCard
+            title="HAWAII<br>AUSTRALIEN<br>JAPAN<br>BALI<br>GILI ISLANDS"
+            background="src/assets/images/hawaii-card.png"
+          />
+        </div>
+        <div class="card-item flex-shrink-0 fade-up-on-scroll">
+          <PriceCard
+            title="AUSTRALIEN<br>NEW ZEALAND<br>VIETNAM<br>BALI<br>LOMBOK"
+            background="src/assets/images/australia-card.png"
+          />
+        </div>
       </div>
-      <div class="card-item">
-        <PriceCard
-          title="HAWAII<br>AUSTRALIEN<br>JAPAN<br>BALI<br>GILI ISLANDS"
-          background="src/assets/images/hawaii-card.png"
-        />
-      </div>
-      <div class="card-item">
-        <PriceCard
-          title="AUSTRALIEN<br>NEW ZEALAND<br>VIETNAM<br>BALI<br>LOMBOK"
-          background="src/assets/images/australia-card.png"
-        />
-      </div>
-      <div class="card-item">
-        <PriceCard
-          title="BRASILIEN<br>COLOMBIA<br>COSTA RICA<br>MEXICO"
-          background="src/assets/images/brazil-card.png"
-        />
-      </div>
-      <div class="card-item">
-        <PriceCard
-          title="HAWAII<br>AUSTRALIEN<br>JAPAN<br>BALI<br>GILI ISLANDS"
-          background="src/assets/images/hawaii-card.png"
-        />
-      </div>
-      <div class="card-item">
-        <PriceCard
-          title="AUSTRALIEN<br>NEW ZEALAND<br>VIETNAM<br>BALI<br>LOMBOK"
-          background="src/assets/images/australia-card.png"
+
+      <div class="z-10 flex justify-center mt-10 fade-up-on-scroll">
+        <img
+          src="src/assets/images/Arrow.svg"
+          alt="Scroll for more"
+          class="w-60 h-auto animate-bounce opacity-90 drop-shadow-[0_0_6px_rgba(0,0,0,0.4)]"
         />
       </div>
     </div>
-
-    <!-- 👇 Your PNG scroll indicator -->
-    <div class="z-10 flex justify-center mt-10 ">
-      <img
-        src="src/assets/images/Arrow.svg"
-        alt="Scroll for more"
-        class="w-60 h-auto animate-bounce opacity-90 drop-shadow-[0_0_6px_rgba(0,0,0,0.4)]"
-      />
-    </div>
-  </div>
-</section>
-  <!-- Planlæg Dit Højskolebudget -->
-<section class="content-wrapper my-24 md:my-32 lg:my-40 text-[var(--color-sort)]">
-    <h2 class="h2 pb-8">Planlæg dit højskolebudget</h2>
-  
-    <p class="p max-w-[65ch] mb-8">
-      Priserne for vores højskoleophold i udlandet er forskellige alt efter længde på opholdet, hvilke og hvor mange lande
-      (og dermed flybilletpriser) vi besøger, inkluderede adventure-aktiviteter, indkvarterings-priser, lokal transport og andet.
-    </p>
-  
-    <p class="p max-w-[65ch] mb-8">
-      Vi har bevidst – og velovervejet – undladt at inkludere indkvartering i fridugerne, da alle elever altid rejser ud på eventyr,
-      når det er friduge-tid. Det giver så god mening at give eleverne den frihed, og ikke samtidig skulle betale for hytter/værelser
-      på højskolen, der blot ender med at stå tomme.
-    </p>
-  
-    <p class="p max-w-[65ch] mb-8">
-      Vi er desværre ikke bekendt at nogle af vores tidligere elever har modtaget tilskud til et af vores højskoleophold.
-      Dog kan man kontakte sin kommune ifm. en evt. ansøgning i forhold til tilskud til højskole.
-      Der er kommuner der yder tilskud til højskoleophold, og beløbets størrelse varierer.
-    </p>
-  
-    <p class="p max-w-[65ch]">
-      De fleste af vores elever sparer selv op, gennem enten fritids- eller fuldtidsjob og vi anbefaler altid at give den gas ift. opsparing,
-      så man ikke skal tænke på at skulle spare, mens man er på eventyr på højskole i udlandet.
-    </p>
   </section>
+
+  <!-- 💰 BUDGET SECTION -->
+  <section class="relative z-20 bg-[var(--color-hvid)] text-[var(--color-sort)] py-24 md:py-32 lg:py-40 shadow-lg">
+    <div class="content-wrapper max-w-[1100px] mx-auto fade-up-on-scroll">
+      <h2 class="h2 pb-8">Planlæg dit højskolebudget</h2>
+      <p class="p max-w-[65ch] mb-8">
+        Priserne for vores højskoleophold i udlandet er forskellige alt efter længde på opholdet, hvilke og hvor mange lande
+        (og dermed flybilletpriser) vi besøger, inkluderede adventure-aktiviteter, indkvarterings-priser, lokal transport og andet.
+      </p>
+      <p class="p max-w-[65ch] mb-8">
+        Vi har bevidst – og velovervejet – undladt at inkludere indkvartering i fridugerne, da alle elever altid rejser ud på eventyr,
+        når det er friduge-tid. Det giver så god mening at give eleverne den frihed, og ikke samtidig skulle betale for hytter/værelser
+        på højskolen, der blot ender med at stå tomme.
+      </p>
+      <p class="p max-w-[65ch] mb-8">
+        Vi er desværre ikke bekendt at nogle af vores tidligere elever har modtaget tilskud til et af vores højskoleophold.
+        Dog kan man kontakte sin kommune ifm. en evt. ansøgning i forhold til tilskud til højskole.
+        Der er kommuner der yder tilskud til højskoleophold, og beløbets størrelse varierer.
+      </p>
+      <p class="p max-w-[65ch]">
+        De fleste af vores elever sparer selv op, gennem enten fritids- eller fuldtidsjob og vi anbefaler altid at give den gas ift. opsparing,
+        så man ikke skal tænke på at skulle spare, mens man er på eventyr på højskole i udlandet.
+      </p>
+    </div>
+  </section>
+
+  <!-- ✨ Animations + JS -->
+  <style>
+    @keyframes fade-up {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-up-on-scroll {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .fade-up-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    section.bg-fixed {
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover;
+    }
+
+    .cards-scroll {
+      display: flex;
+      gap: 2rem;
+      overflow-x: auto;
+      padding-bottom: 1.5rem;
+    }
+
+    .cards-scroll > * {
+      flex: 0 0 auto;
+    }
+  </style>
+
+  <script>
+    // Fade-in on scroll (only inner content, not backgrounds)
+    const fadeEls = document.querySelectorAll('.fade-up-on-scroll');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    fadeEls.forEach((el) => observer.observe(el));
+  </script>
 
 </MainLayout>
