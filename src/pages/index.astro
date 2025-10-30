@@ -1,8 +1,8 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Button from '../components/Button.astro';
-import Link from '../components/Link.astro';
-import { Image } from 'astro:assets';
+import Button from "../components/Button.astro";
+import Link from "../components/Link.astro";
+import { Image } from "astro:assets";
 import Hero from "../components/Hero.astro";
 import Faq from "../components/Faq.astro";
 import Banner from "../components/Banner.astro";
@@ -10,26 +10,88 @@ import Trin from "../components/Trin.astro";
 import InfoModer from "../components/InfoModer.astro";
 import RejserCard from "../components/RejserCard.astro";
 ---
+
 <MainLayout title="Titel">
+  <!-- 🌍 Hero Section -->
+  <Hero />
 
-	<Hero></Hero>
-	<section class="content-wrapper my-16 md:my-24 lg:my-32">
-		<h1 class="h1 pb-4">DIT LIVS EVENTYR</h1>
-	  
-		<p class="p max-w-[55ch] text-[var(--color-sort)]">
-		  HÖJSKOLENDK er for dig, der vil på eventyr med højskolefællesskabet i rygsækken.
-		  Vi rejser ud i verden for at opleve, lære og møde nye mennesker og kulturer.
-		  <br><br>
-		  Oplev fællesskab, mening og masser af rejseglæde på vores højskoleophold i udlandet.
-		  Tryghed er altid med på turen – vi er medlem af Rejsegarantifonden.
-		  <br><br>
-		  Klar til dit næste eventyr?
-		</p>
-	  </section>
-	  <Trin></Trin>
-	  <RejserCard></RejserCard>
-	  <InfoModer></InfoModer>
-	<Banner></Banner>
-	<Faq></Faq>
+  <!-- ✨ Intro Section -->
+  <section class="content-wrapper my-16 md:my-24 lg:my-32">
+    <h1 class="h1 pb-4">DIT LIVS EVENTYR</h1>
 
+    <p class="p max-w-[55ch] text-[var(--color-sort)]">
+      HÖJSKOLENDK er for dig, der vil på eventyr med højskolefællesskabet i
+      rygsækken. Vi rejser ud i verden for at opleve, lære og møde nye mennesker
+      og kulturer.
+      <br /><br />
+      Oplev fællesskab, mening og masser af rejseglæde på vores højskoleophold i
+      udlandet. Tryghed er altid med på turen – vi er medlem af
+      Rejsegarantifonden.
+      <br /><br />
+      Klar til dit næste eventyr?
+    </p>
+  </section>
+
+  <!-- 🪜 Trin Section -->
+  <section
+    class="relative w-full bg-cover bg-center bg-no-repeat text-[var(--color-hvid)] py-24 text-center"
+    style="background-image: url('src/assets/images/trin.webp');"
+  >
+    <div class="absolute inset-0 bg-[rgba(0,0,0,0.25)]"></div>
+
+    <div class="relative z-10 content-wrapper flex flex-col items-center">
+      <h2 class="h2 mb-4">SÅDAN FUNGERER DET (TRIN FOR TRIN)</h2>
+      <p class="p max-w-[70ch] mb-12">
+        Få overblik over, hvordan du kan komme med på en rejse med HøjskolenDK.
+        Vælg, om du vil reservere en plads, tilmelde dig, eller blot høre mere.
+      </p>
+
+      <div class="flex flex-col items-center gap-6 mb-10">
+        <Trin
+          title="1. Reserver en plads"
+          text="Find din drømmerejse og reserver en plads – helt uforpligtende. Så holder vi en plads til dig, mens du beslutter dig."
+          shade="var(--color-gron-2)"
+        />
+        <Trin
+          title="2. Tilmeld dig rejsen"
+          text="Klar til eventyret? Udfyld tilmeldingsformularen og køb din billet. Så er du officielt med på holdet!"
+          shade="var(--color-gron-1)"
+        />
+        <Trin
+          title="3. Deltag i et infomøde (valgfrit)"
+          text="Vil du høre mere først? Tilmeld dig et af vores infomøder og få svar på alle dine spørgsmål."
+          shade="var(--color-gron-3)"
+        />
+      </div>
+
+      <Button href="/ophold" text="VÆLG DIT EVENTYR" color="hvid" size="lg" />
+    </div>
+  </section>
+
+  <!-- 🌏 Rejser Cards -->
+  <RejserCard />
+
+  <!-- 💬 Infomøder Section -->
+  <section
+    class="relative w-full bg-cover bg-center bg-no-repeat text-[var(--color-hvid)] py-24 text-center"
+    style="background-image: url('src/assets/images/informøder.webp');"
+  >
+    <div class="absolute inset-0 bg-[rgba(0,0,0,0.25)]"></div>
+
+    <div class="relative z-10 content-wrapper flex flex-col items-center">
+      <h2 class="h2 mb-4">SÅDAN FUNGERER DET (TRIN FOR TRIN)</h2>
+      <p class="p max-w-[70ch] mb-12">
+        Få overblik over, hvordan du kan komme med på en rejse med HøjskolenDK.
+        Vælg, om du vil reservere en plads, tilmelde dig, eller blot høre mere.
+      </p>
+
+      <div class="flex flex-col items-center gap-6 mb-10">
+        <InfoModer />
+      </div>
+    </div>
+  </section>
+
+  <!-- 🧡 Banner + FAQ -->
+  <Banner />
+  <Faq />
 </MainLayout>
