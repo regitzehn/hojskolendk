@@ -16,9 +16,8 @@ import RejserCard from "../components/RejserCard.astro";
   <Hero />
 
   <!-- ✨ Intro Section -->
-  <section class="content-wrapper my-16 md:my-24 lg:my-32">
+  <section class="content-wrapper my-16 md:my-24 lg:my-32 fade-up-on-scroll">
     <h1 class="h1 pb-4">DIT LIVS EVENTYR</h1>
-
     <p class="p max-w-[55ch] text-[var(--color-sort)]">
       HÖJSKOLENDK er for dig, der vil på eventyr med højskolefællesskabet i
       rygsækken. Vi rejser ud i verden for at opleve, lære og møde nye mennesker
@@ -32,14 +31,14 @@ import RejserCard from "../components/RejserCard.astro";
     </p>
   </section>
 
-  <!-- 🪜 Trin Section -->
+  <!-- 🪜 Trin Section (Parallax) -->
   <section
-    class="relative w-full bg-cover bg-center bg-no-repeat text-[var(--color-hvid)] py-24 text-center"
+    class="relative w-full bg-fixed bg-center bg-cover text-[var(--color-hvid)] py-24 text-center"
     style="background-image: url('src/assets/images/trin.webp');"
   >
     <div class="absolute inset-0 bg-[rgba(0,0,0,0.25)]"></div>
 
-    <div class="relative z-10 content-wrapper flex flex-col items-center">
+    <div class="relative z-10 content-wrapper flex flex-col items-center fade-up-on-scroll">
       <h2 class="h2 mb-4">SÅDAN FUNGERER DET (TRIN FOR TRIN)</h2>
       <p class="p max-w-[70ch] mb-12">
         Få overblik over, hvordan du kan komme med på en rejse med HøjskolenDK.
@@ -69,19 +68,21 @@ import RejserCard from "../components/RejserCard.astro";
   </section>
 
   <!-- 🌏 Rejser Cards -->
-  <RejserCard />
+  <div class="fade-up-on-scroll my-16">
+    <RejserCard />
+  </div>
 
-  <!-- 💬 Infomøder Section -->
+  <!-- 💬 Infomøder Section (Parallax) -->
   <section
-    class="relative w-full bg-cover bg-center bg-no-repeat text-[var(--color-hvid)] py-24 text-center"
+    class="relative w-full bg-fixed bg-center bg-cover text-[var(--color-hvid)] py-24 text-center"
     style="background-image: url('src/assets/images/informøder.webp');"
   >
     <div class="absolute inset-0 bg-[rgba(0,0,0,0.25)]"></div>
 
-    <div class="relative z-10 content-wrapper flex flex-col items-center">
+    <div class="relative z-10 content-wrapper flex flex-col items-center fade-up-on-scroll">
       <h2 class="h2 mb-4">INFOMØDER</h2>
       <p class="p max-w-[70ch] mb-12">
-		Kig forbi et af vores hyggelige infomøder i København, Aarhus eller online – vi glæder os til at møde dig!
+        Kig forbi et af vores hyggelige infomøder i København, Aarhus eller online – vi glæder os til at møde dig!
       </p>
 
       <div class="flex flex-col items-center gap-6 mb-10">
@@ -90,35 +91,89 @@ import RejserCard from "../components/RejserCard.astro";
     </div>
   </section>
 
-  <!-- 🧡 Banner + FAQ -->
-  <Banner />
-  <section
-  class="relative w-full bg-center bg-cover text-[var(--color-hvid)] py-28 text-center"
-  style="background-image: url('src/assets/images/vigørenforskel.webp');"
->
-  <!-- Overlay for readability -->
-  <div class="absolute inset-0 bg-[rgba(0,0,0,0.35)]"></div>
-
-  <!-- Content -->
-  <div class="relative z-10 content-wrapper max-w-[850px] mx-auto">
-    <h2 class="h2 mb-6 font-[Montserrat] tracking-wide">VI GØR EN FORSKEL</h2>
-
-    <p class="p mb-4 text-lg leading-relaxed font-[Poppins]">
-      Sammen med <em>‘Trees For the Future’</em> planter vi 50 træer for hver elev,
-      der rejser med os på højskoleophold i udlandet.
-    </p>
-
-    <p class="p text-lg leading-relaxed font-[Poppins] mb-10">
-      I et spændende samarbejde med <strong>Verdens Skove</strong>, har vi fredet
-      <strong><em>106.785 m²</em></strong> regnskov i Nicaragua – og vi fortsætter.
-    </p>
-
-    <img
-      src="src/assets/images/verdensskove.svg"
-      alt="Verdens Skove Logo"
-      class="mx-auto w-[220px] opacity-95"
-    />
+  <!-- 🧡 Banner -->
+  <div class="fade-up-on-scroll">
+    <Banner />
   </div>
-</section>
-  <Faq />
+
+  <!-- 🌿 Vi Gør En Forskel Section (Parallax) -->
+  <section
+    class="relative w-full bg-fixed bg-center bg-cover text-[var(--color-hvid)] py-28 text-center"
+    style="background-image: url('src/assets/images/vigørenforskel.webp');"
+  >
+    <div class="absolute inset-0 bg-[rgba(0,0,0,0.35)]"></div>
+
+    <div class="relative z-10 content-wrapper max-w-[850px] mx-auto fade-up-on-scroll">
+      <h2 class="h2 mb-6 font-[Montserrat] tracking-wide">VI GØR EN FORSKEL</h2>
+
+      <p class="p mb-4 text-lg leading-relaxed font-[Poppins]">
+        Sammen med <em>‘Trees For the Future’</em> planter vi 50 træer for hver elev,
+        der rejser med os på højskoleophold i udlandet.
+      </p>
+
+      <p class="p text-lg leading-relaxed font-[Poppins] mb-10">
+        I et spændende samarbejde med <strong>Verdens Skove</strong>, har vi fredet
+        <strong><em> 106.785 m² </em></strong> regnskov i Nicaragua – og vi fortsætter.
+      </p>
+
+      <img
+        src="src/assets/images/verdensskove.svg"
+        alt="Verdens Skove Logo"
+        class="mx-auto w-[220px] opacity-95"
+      />
+    </div>
+  </section>
+
+  <!-- 💬 FAQ Section -->
+  <div class="fade-up-on-scroll">
+    <Faq />
+  </div>
+
+  <!-- ✨ Animations + Parallax Styles -->
+  <style>
+    @keyframes fade-up {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-up-on-scroll {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .fade-up-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    section.bg-fixed {
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover;
+    }
+  </style>
+
+  <script>
+    // Fade-up animation when element enters viewport
+    const fadeEls = document.querySelectorAll(".fade-up-on-scroll");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    fadeEls.forEach((el) => observer.observe(el));
+  </script>
 </MainLayout>

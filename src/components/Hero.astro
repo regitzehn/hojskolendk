@@ -1,18 +1,16 @@
 <section
-  class="relative w-full h-screen bg-cover bg-center flex flex-col justify-center items-center text-center"
+  class="relative w-full h-screen bg-fixed bg-center bg-cover flex flex-col justify-center items-center text-center text-[var(--color-hvid)]"
   style="background-image: url('/src/assets/images/hero-bg.webp');"
 >
+  <!-- Overlay -->
   <div class="absolute inset-0 bg-[rgba(0,0,0,0.35)]"></div>
 
-  <div class="relative z-10 content-wrapper text-[var(--color-hvid)]">
-    <h1
-      class="hero-h1 font-[Montserrat]"
-    >
+  <!-- Content -->
+  <div class="relative z-10 content-wrapper">
+    <h1 class="hero-h1 font-[Montserrat] fade-up-on-scroll">
       HØJSKOLE I UDLANDET
     </h1>
-    <p
-      class="hero-p font-[Poppins]"
-    >
+    <p class="hero-p font-[Poppins] fade-up-on-scroll">
       Eventyrlige højskoleophold i udlandet for unge.
     </p>
   </div>
@@ -20,6 +18,49 @@
   <style>
     section {
       scroll-snap-align: start;
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover;
+    }
+
+    /* Same fade-up animation style as rest of site */
+    @keyframes fade-up {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-up-on-scroll {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .fade-up-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
+
+  <script>
+    // Fade-up animation when element enters view
+    const fadeEls = document.querySelectorAll(".fade-up-on-scroll");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    fadeEls.forEach((el) => observer.observe(el));
+  </script>
 </section>
