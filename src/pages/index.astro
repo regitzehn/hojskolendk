@@ -92,5 +92,33 @@ import RejserCard from "../components/RejserCard.astro";
 
   <!-- 🧡 Banner + FAQ -->
   <Banner />
+  <section
+  class="relative w-full bg-center bg-cover text-[var(--color-hvid)] py-28 text-center"
+  style="background-image: url('src/assets/images/vigørenforskel.webp');"
+>
+  <!-- Overlay for readability -->
+  <div class="absolute inset-0 bg-[rgba(0,0,0,0.35)]"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 content-wrapper max-w-[850px] mx-auto">
+    <h2 class="h2 mb-6 font-[Montserrat] tracking-wide">VI GØR EN FORSKEL</h2>
+
+    <p class="p mb-4 text-lg leading-relaxed font-[Poppins]">
+      Sammen med <em>‘Trees For the Future’</em> planter vi 50 træer for hver elev,
+      der rejser med os på højskoleophold i udlandet.
+    </p>
+
+    <p class="p text-lg leading-relaxed font-[Poppins] mb-10">
+      I et spændende samarbejde med <strong>Verdens Skove</strong>, har vi fredet
+      <strong><em>106.785 m²</em></strong> regnskov i Nicaragua – og vi fortsætter.
+    </p>
+
+    <img
+      src="src/assets/images/verdensskove.svg"
+      alt="Verdens Skove Logo"
+      class="mx-auto w-[220px] opacity-95"
+    />
+  </div>
+</section>
   <Faq />
 </MainLayout>
