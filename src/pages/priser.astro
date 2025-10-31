@@ -8,7 +8,7 @@ import PriceCard from "../components/PriceCard.astro";
   <!-- 🌄 HERO (Parallax background) -->
   <section
     class="relative w-full h-[80vh] bg-fixed bg-center bg-cover flex flex-col justify-center items-center text-center text-[var(--color-hvid)]"
-    style="background-image: url('public/priser1.webp');"
+    style="background-image: url('/priser1.webp');"
   >
     <div class="absolute inset-0 bg-[rgba(0,0,0,0.35)]"></div>
     <!-- Animate only the content -->
@@ -34,7 +34,7 @@ import PriceCard from "../components/PriceCard.astro";
   <!-- 💸 PRICE CARDS (Parallax background) -->
   <section
     class="relative w-full bg-fixed bg-center bg-cover py-24 text-[var(--color-hvid)]"
-    style="background-image: url('public/priser2.webp');"
+    style="background-image: url('/priser2.webp');"
   >
     <!-- Keep background always visible -->
     <div class="absolute inset-0 bg-[rgba(0,0,0,0.25)]"></div>
@@ -45,26 +45,26 @@ import PriceCard from "../components/PriceCard.astro";
         <div class="card-item flex-shrink-0 fade-up-on-scroll">
           <PriceCard
             title="BRASILIEN<br>COLOMBIA<br>COSTA RICA<br>MEXICO"
-            background="public/brazil-card.png"
+            background="/brazil-card.png"
           />
         </div>
         <div class="card-item flex-shrink-0 fade-up-on-scroll">
           <PriceCard
             title="HAWAII<br>AUSTRALIEN<br>JAPAN<br>BALI<br>GILI ISLANDS"
-            background="public/australia-card.png"
+            background="/australia-card.png"
           />
         </div>
         <div class="card-item flex-shrink-0 fade-up-on-scroll">
           <PriceCard
             title="AUSTRALIEN<br>NEW ZEALAND<br>VIETNAM<br>BALI<br>LOMBOK"
-            background="public/hawaii-card.png"
+            background="/hawaii-card.png"
           />
         </div>
       </div>
 
       <div class="z-10 flex justify-center mt-10 fade-up-on-scroll">
         <img
-          src="public/Arrow.svg"
+          src="/Arrow.svg"
           alt="Scroll for more"
           class="w-64 animate-shake animate-infinite animate-duration-[5000ms]"
         />
