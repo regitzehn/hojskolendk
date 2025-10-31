@@ -9,147 +9,147 @@ import Faq from "../components/Faq.astro";
 
 <MainLayout title="Vælg dit eventyr">
 
-  <!-- 🌄 HERO (Parallax Background) -->
-  <section
-    class="relative w-full h-[80vh] bg-fixed bg-center bg-cover flex flex-col justify-center items-center text-center text-[var(--color-hvid)]"
-    style="background-image: url('public/images/vælgditeventyr.webp');"
-  >
-    <div class="absolute inset-0 bg-[rgba(0,0,0,0.35)]"></div>
-    <div class="relative z-10 content-wrapper fade-up-on-scroll">
-      <h1 class="h1 font-[Montserrat] mb-4">VÆLG DIT EVENTYR!</h1>
-      <h3 class="h3 font-[Poppins] max-w-[60ch] mx-auto">
-        Tag med på et højskoleophold i udlandet fyldt med oplevelser, venskaber og nye perspektiver.
-      </h3>
-    </div>
-  </section>
+    <!-- 🌄 HERO (Parallax Background) -->
+    <section
+        class="relative w-full h-[80vh] bg-fixed bg-center bg-cover flex flex-col justify-center items-center text-center text-[var(--color-hvid)]"
+        style="background-image: url('public/vælgditeventyr.webp');"
+    >
+        <div class="absolute inset-0 bg-[rgba(0,0,0,0.35)]"></div>
+        <div class="relative z-10 content-wrapper fade-up-on-scroll">
+            <h1 class="h1 font-[Montserrat] mb-4">VÆLG DIT EVENTYR!</h1>
+            <h3 class="h3 font-[Poppins] max-w-[60ch] mx-auto">
+                Tag med på et højskoleophold i udlandet fyldt med oplevelser, venskaber og nye perspektiver.
+            </h3>
+        </div>
+    </section>
 
-  <!-- 🧭 INTRO SECTION -->
-  <section class="relative z-20 bg-[var(--color-hvid)] text-[var(--color-sort)] py-24 md:py-32 lg:py-40 shadow-lg">
-    <div class="content-wrapper fade-up-on-scroll mx-auto">
-      <h2 class="h2 pb-4">
-        Højskoleophold eller sommerhøjskole –<br class="hidden sm:block" />
-        hvad passer til dig?
-      </h2>
-      <p class="p max-w-[55ch]">
-        Vores højskoleophold er de store eventyr – lange rejser med undervisning, fællesskab og oplevelser på tværs af lande og kulturer.
-        <br><br>
-        Vores sommerhøjskoler er de korte, intense versioner. Perfekte til dig, der vil ud at rejse, lære og møde nye mennesker i din sommerferie.
-      </p>
-    </div>
-  </section>
+    <!-- 🧭 INTRO SECTION -->
+    <section class="relative z-20 bg-[var(--color-hvid)] text-[var(--color-sort)] py-24 md:py-32 lg:py-40 shadow-lg">
+        <div class="content-wrapper fade-up-on-scroll mx-auto">
+            <h2 class="h2 pb-4">
+                Højskoleophold eller sommerhøjskole –<br class="hidden sm:block" />
+                hvad passer til dig?
+            </h2>
+            <p class="p max-w-[55ch]">
+                Vores højskoleophold er de store eventyr – lange rejser med undervisning, fællesskab og oplevelser på tværs af lande og kulturer.
+                <br><br>
+                Vores sommerhøjskoler er de korte, intense versioner. Perfekte til dig, der vil ud at rejse, lære og møde nye mennesker i din sommerferie.
+            </p>
+        </div>
+    </section>
 
-  <!-- 💸 DESTINATIONS SECTION (Parallax Background) -->
-  <section
-    class="relative w-full bg-fixed bg-center bg-cover py-24 text-[var(--color-hvid)]"
-    style="background-image: url('public/images/højskoleophold.webp');"
-  >
-    <div class="absolute inset-0 bg-[rgba(0,0,0,0.25)]"></div>
+    <!-- 💸 DESTINATIONS SECTION (Parallax Background) -->
+    <section
+        class="relative w-full bg-fixed bg-center bg-cover py-24 text-[var(--color-hvid)]"
+        style="background-image: url('public/højskoleophold.webp');"
+    >
+        <div class="absolute inset-0 bg-[rgba(0,0,0,0.25)]"></div>
 
-    <div class="relative z-10 content-wrapper fade-up-on-scroll">
-      <!-- HØJSKOLEOPHOLD -->
-      <h2 class="h2 mb-10">HØJSKOLEOPHOLD</h2>
+        <div class="relative z-10 content-wrapper fade-up-on-scroll">
+            <!-- HØJSKOLEOPHOLD -->
+            <h2 class="h2 mb-10">HØJSKOLEOPHOLD</h2>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
-        <!-- Repeatable Card Component -->
-        {[
-          { src: "rejse1.png", title: "MALDIVERNE<br>SRI LANKA<br>JAPAN<br>AUSTRALIEN<br>BALI<br>GILI ISLANDS" },
-          { src: "rejse2.png", title: "AUSTRALIEN<br>NEW ZEALAND<br>VIETNAM<br>BALI<br>GILI ISLANDS<br>LOMBOK" },
-          { src: "rejse3.png", title: "INDIEN<br>NEPAL<br>THAILAND<br>VIETNAM<br>SRI LANKA" },
-          { src: "rejse4.png", title: "HAWAII<br>AUSTRALIEN<br>JAPAN<br>BALI<br>GILI ISLANDS" },
-          { src: "rejse5.png", title: "MALDIVERNE<br>SRI LANKA<br>BALI<br>GILI ISLANDS" },
-          { src: "rejse6.png", title: "BRASILIEN<br>BOLIVIA<br>COLOMBIA<br>ECUADOR<br>PERU<br>ARGENTINA" },
-          { src: "rejse7.png", title: "AUSTRALIEN<br>JAPAN<br>BALI<br>GILI ISLANDS" },
-          { src: "rejse8.png", title: "BRASILIEN<br>COLOMBIA<br>COSTA RICA<br>MEXICO" },
-        ].map(({ src, title }) => (
-          <div class="flex-shrink-0 fade-up-on-scroll">
-            <div class="relative overflow-hidden rounded-2xl h-[400px]">
-              <img src={`src/assets/images/${src}`} alt={title} class="w-full h-full object-cover" />
-              <div class="absolute inset-0 bg-[rgba(0,0,0,0.35)]"></div>
-              <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4 gap-2">
-                <h3 class="h3 text-[var(--color-hvid)] uppercase tracking-wide leading-tight" set:html={title}></h3>
-              </div>
-              <div class="absolute left-0 right-0 bottom-6 flex justify-center p-4">
-                <Button href="/singleview" text="Læs mere" color="hvid" size="sm" rounded="md" />
-              </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+                <!-- Repeatable Card Component -->
+                {[
+                    { src: "rejse1.png", title: "MALDIVERNE<br>SRI LANKA<br>JAPAN<br>AUSTRALIEN<br>BALI<br>GILI ISLANDS" },
+                    { src: "rejse2.png", title: "AUSTRALIEN<br>NEW ZEALAND<br>VIETNAM<br>BALI<br>GILI ISLANDS<br>LOMBOK" },
+                    { src: "rejse3.png", title: "INDIEN<br>NEPAL<br>THAILAND<br>VIETNAM<br>SRI LANKA" },
+                    { src: "rejse4.png", title: "HAWAII<br>AUSTRALIEN<br>JAPAN<br>BALI<br>GILI ISLANDS" },
+                    { src: "rejse5.png", title: "MALDIVERNE<br>SRI LANKA<br>BALI<br>GILI ISLANDS" },
+                    { src: "rejse6.png", title: "BRASILIEN<br>BOLIVIA<br>COLOMBIA<br>ECUADOR<br>PERU<br>ARGENTINA" },
+                    { src: "rejse7.png", title: "AUSTRALIEN<br>JAPAN<br>BALI<br>GILI ISLANDS" },
+                    { src: "rejse8.png", title: "BRASILIEN<br>COLOMBIA<br>COSTA RICA<br>MEXICO" },
+                ].map(({ src, title }) => (
+                    <div class="flex-shrink-0 fade-up-on-scroll">
+                        <div class="relative overflow-hidden rounded-2xl h-[400px]">
+                            <img src={`/public/${src}`} alt={title} class="w-full h-full object-cover" />
+                            <div class="absolute inset-0 bg-[rgba(0,0,0,0.35)]"></div>
+                            <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4 gap-2">
+                                <h3 class="h3 text-[var(--color-hvid)] uppercase tracking-wide leading-tight" set:html={title}></h3>
+                            </div>
+                            <div class="absolute left-0 right-0 bottom-6 flex justify-center p-4">
+                                <Button href="/singleview" text="Læs mere" color="hvid" size="sm" rounded="md" />
+                            </div>
+                        </div>
+                    </div>
+                ))}
             </div>
-          </div>
-        ))}
-      </div>
 
-      <!-- SOMMERHØJSKOLE -->
-      <h2 class="h2 mb-10 fade-up-on-scroll">SOMMERHØJSKOLE</h2>
+            <!-- SOMMERHØJSKOLE -->
+            <h2 class="h2 mb-10 fade-up-on-scroll">SOMMERHØJSKOLE</h2>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        {[
-          { src: "rejse9.png", title: "BALI<br>LOMBOK<br>GILI ISLANDS", label: "Sommerhøjskole" },
-          { src: "rejse10.png", title: "SYDKOREA<br>JAPAN", label: "Sommerhøjskole" },
-          { src: "rejse11.png", title: "JAPAN", label: "Sommerhøjskole" },
-        ].map(({ src, title, label }) => (
-          <div class="flex-shrink-0 fade-up-on-scroll">
-            <div class="relative overflow-hidden rounded-2xl h-[400px]">
-              <img src={`src/assets/images/${src}`} alt={title} class="w-full h-full object-cover" />
-              <div class="absolute inset-0 bg-[rgba(0,0,0,0.35)]"></div>
-              <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4 gap-3">
-                <h3 class="h3 text-[var(--color-hvid)] uppercase tracking-wide leading-tight" set:html={title}></h3>
-                <p class="text-[var(--color-hvid)] text-sm font-[Montserrat] uppercase tracking-wider">
-                  {label}
-                </p>
-              </div>
-              <div class="absolute left-0 right-0 bottom-6 flex justify-center p-4">
-                <Button href="/singleview" text="Læs mere" color="hvid" size="sm" rounded="md" />
-              </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                {[
+                    { src: "rejse9.png", title: "BALI<br>LOMBOK<br>GILI ISLANDS", label: "Sommerhøjskole" },
+                    { src: "rejse10.png", title: "SYDKOREA<br>JAPAN", label: "Sommerhøjskole" },
+                    { src: "rejse11.png", title: "JAPAN", label: "Sommerhøjskole" },
+                ].map(({ src, title, label }) => (
+                    <div class="flex-shrink-0 fade-up-on-scroll">
+                        <div class="relative overflow-hidden rounded-2xl h-[400px]">
+                            <img src={`/public/${src}`} alt={title} class="w-full h-full object-cover" />
+                            <div class="absolute inset-0 bg-[rgba(0,0,0,0.35)]"></div>
+                            <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4 gap-3">
+                                <h3 class="h3 text-[var(--color-hvid)] uppercase tracking-wide leading-tight" set:html={title}></h3>
+                                <p class="text-[var(--color-hvid)] text-sm font-[Montserrat] uppercase tracking-wider">
+                                    {label}
+                                </p>
+                            </div>
+                            <div class="absolute left-0 right-0 bottom-6 flex justify-center p-4">
+                                <Button href="/singleview" text="Læs mere" color="hvid" size="sm" rounded="md" />
+                            </div>
+                        </div>
+                    </div>
+                ))}
             </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+        </div>
+    </section>
 
-  <!-- ✨ Animations + Parallax Styles -->
-  <style>
-    @keyframes fade-up {
-      0% {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+    <!-- ✨ Animations + Parallax Styles -->
+    <style>
+        @keyframes fade-up {
+            0% {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-    .fade-up-on-scroll {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
+        .fade-up-on-scroll {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
 
-    .fade-up-on-scroll.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+        .fade-up-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-    section.bg-fixed {
-      background-attachment: fixed;
-      background-position: center;
-      background-size: cover;
-    }
-  </style>
+        section.bg-fixed {
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+    </style>
 
-  <script>
-    // Fade-up animation when element enters view
-    const fadeEls = document.querySelectorAll(".fade-up-on-scroll");
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-    fadeEls.forEach((el) => observer.observe(el));
-  </script>
+    <script>
+        // Fade-up animation when element enters view
+        const fadeEls = document.querySelectorAll(".fade-up-on-scroll");
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            { threshold: 0.15 }
+        );
+        fadeEls.forEach((el) => observer.observe(el));
+    </script>
 </MainLayout>

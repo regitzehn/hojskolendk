@@ -4,236 +4,236 @@ import MainLayout from "../layouts/MainLayout.astro";
 
 <MainLayout title="Tilmeld rejse">
 
-  <section
-    class="relative min-h-screen bg-cover bg-center flex flex-col justify-center items-center text-center"
-    style="background-image: url('public/images/tilmeld.webp');"
-  >
-    <!-- Overlay -->
-    <div class="absolute inset-0 bg-[rgba(255,255,255,0.2)]"></div>
+    <section
+        class="relative min-h-screen bg-cover bg-center flex flex-col justify-center items-center text-center"
+        style="background-image: url('public/tilmeld.webp');"
+    >
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-[rgba(255,255,255,0.2)]"></div>
 
-    <!-- Form Container -->
-    <div class="relative z-10 max-w-[650px] w-full px-6">
+        <!-- Form Container -->
+        <div class="relative z-10 max-w-[650px] w-full px-6">
 
-      <!-- Progress Circle -->
-      <div class="flex flex-col items-center mb-6">
-        <svg width="60" height="60" class="transform -rotate-90">
-          <circle cx="30" cy="30" r="25" stroke="var(--color-orange-accent)" stroke-width="6" fill="transparent"></circle>
-          <circle id="progressCircle" cx="30" cy="30" r="25"
-            stroke="var(--color-gron-1)" stroke-width="6"
-            fill="transparent" stroke-linecap="round"
-            stroke-dasharray="157" stroke-dashoffset="157"></circle>
-        </svg>
-        <p class="mt-2 text-[14px] font-[Poppins]" id="progressText">0%</p>
-        <p class="text-[12px] text-[var(--color-sort)]" id="stepLabel">Spørgsmål 1/8</p>
-      </div>
+            <!-- Progress Circle -->
+            <div class="flex flex-col items-center mb-6">
+                <svg width="60" height="60" class="transform -rotate-90">
+                    <circle cx="30" cy="30" r="25" stroke="var(--color-orange-accent)" stroke-width="6" fill="transparent"></circle>
+                    <circle id="progressCircle" cx="30" cy="30" r="25"
+                        stroke="var(--color-gron-1)" stroke-width="6"
+                        fill="transparent" stroke-linecap="round"
+                        stroke-dasharray="157" stroke-dashoffset="157"></circle>
+                </svg>
+                <p class="mt-2 text-[14px] font-[Poppins]" id="progressText">0%</p>
+                <p class="text-[12px] text-[var(--color-sort)]" id="stepLabel">Spørgsmål 1/8</p>
+            </div>
 
-      <!-- Form -->
-      <form id="multiStepForm" class="font-[Poppins] text-[var(--color-sort)]">
+            <!-- Form -->
+            <form id="multiStepForm" class="font-[Poppins] text-[var(--color-sort)]">
 
-        <!-- Step 1 -->
-        <div class="form-step active">
-          <h2 class="text-2xl md:text-3xl font-[Montserrat] mb-6">
-            Hvilket ophold vil du tilmelde dig?
-          </h2>
+                <!-- Step 1 -->
+                <div class="form-step active">
+                    <h2 class="text-2xl md:text-3xl font-[Montserrat] mb-6">
+                        Hvilket ophold vil du tilmelde dig?
+                    </h2>
 
-          <div class="flex flex-col gap-3 text-left mb-6">
-            <select class="border-2 border-[var(--color-sort)] rounded-full px-4 py-2 w-full">
-              <option>Vælg ønsket ophold</option>
-              <option>Asien & Oceanien</option>
-              <option>Latinamerika</option>
-              <option>Sydasien & Ø-eventyr</option>
-              <option>Nordamerika & Stillehavet</option>
-              <option>Jorden Rundt</option>
-            </select>
+                    <div class="flex flex-col gap-3 text-left mb-6">
+                        <select class="border-2 border-[var(--color-sort)] rounded-full px-4 py-2 w-full">
+                            <option>Vælg ønsket ophold</option>
+                            <option>Asien & Oceanien</option>
+                            <option>Latinamerika</option>
+                            <option>Sydasien & Ø-eventyr</option>
+                            <option>Nordamerika & Stillehavet</option>
+                            <option>Jorden Rundt</option>
+                        </select>
 
-            <label class="text-sm">Vælg dato</label>
-            <input type="date" class="border-2 border-[var(--color-sort)] rounded-xl px-4 py-2 w-full" />
-          </div>
+                        <label class="text-sm">Vælg dato</label>
+                        <input type="date" class="border-2 border-[var(--color-sort)] rounded-xl px-4 py-2 w-full" />
+                    </div>
 
-          <div class="flex justify-center gap-4">
-            <button
-              type="button"
-              class="next-btn border-2 border-[var(--color-sort)] rounded-full px-6 py-2 hover:bg-[var(--color-orange-accent)] hover:text-[var(--color-hvid)] transition"
-            >
-              NÆSTE
-            </button>
-          </div>
+                    <div class="flex justify-center gap-4">
+                        <button
+                            type="button"
+                            class="next-btn border-2 border-[var(--color-sort)] rounded-full px-6 py-2 hover:bg-[var(--color-orange-accent)] hover:text-[var(--color-hvid)] transition"
+                        >
+                            NÆSTE
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="form-step hidden">
+                    <h2 class="text-2xl md:text-3xl font-[Montserrat] mb-1">Navn</h2>
+                    <p class="text-[13px] text-[var(--color-orange-accent)] mb-5">PRÆCIS SOM DER STÅR I DIT PAS</p>
+
+                    <input type="text" placeholder="Fornavn & mellemnavne" class="border-2 border-[var(--color-sort)] rounded-xl px-4 py-2 w-full mb-3" />
+                    <input type="text" placeholder="Efternavn" class="border-2 border-[var(--color-sort)] rounded-xl px-4 py-2 w-full mb-6" />
+
+                    <div class="flex justify-center gap-4">
+                        <button type="button" class="back-btn border-2 border-[var(--color-sort)] rounded-full px-6 py-2 hover:bg-[var(--color-orange-accent)] hover:text-[var(--color-hvid)] transition">TILBAGE</button>
+                        <button type="button" class="next-btn border-2 border-[var(--color-sort)] rounded-full px-6 py-2 hover:bg-[var(--color-orange-accent)] hover:text-[var(--color-hvid)] transition">NÆSTE</button>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="form-step hidden">
+                    <h2 class="text-2xl md:text-3xl font-[Montserrat] mb-1">Fødselsdato og Køn</h2>
+                    <p class="text-[13px] text-[var(--color-orange-accent)] mb-5">PRÆCIS SOM DER STÅR I DIT PAS</p>
+
+                    <input type="date" class="border-2 border-[var(--color-sort)] rounded-xl px-4 py-2 w-full mb-4" />
+                    <select class="border-2 border-[var(--color-sort)] rounded-full px-4 py-2 w-full mb-6">
+                        <option>Køn</option>
+                        <option>Kvinde</option>
+                        <option>Mand</option>
+                    </select>
+
+                    <div class="flex justify-center gap-4">
+                        <button type="button" class="back-btn border-2 border-[var(--color-sort)] rounded-full px-6 py-2 hover:bg-[var(--color-orange-accent)] hover:text-[var(--color-hvid)] transition">TILBAGE</button>
+                        <button type="button" class="next-btn border-2 border-[var(--color-sort)] rounded-full px-6 py-2 hover:bg-[var(--color-orange-accent)] hover:text-[var(--color-hvid)] transition">NÆSTE</button>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="form-step hidden">
+                    <h2 class="text-2xl md:text-3xl font-[Montserrat] mb-6">Adresse, postnummer og by</h2>
+                    <input type="text" placeholder="Adresse" class="border-2 border-[var(--color-sort)] rounded-xl px-4 py-2 w-full mb-3" />
+                    <input type="text" placeholder="Postnummer og by" class="border-2 border-[var(--color-sort)] rounded-xl px-4 py-2 w-full mb-6" />
+
+                    <div class="flex justify-center gap-4">
+                        <button type="button" class="back-btn border-2 border-[var(--color-sort)] rounded-full px-6 py-2 hover:bg-[var(--color-orange-accent)] hover:text-[var(--color-hvid)] transition">TILBAGE</button>
+                        <button type="button" class="next-btn border-2 border-[var(--color-sort)] rounded-full px-6 py-2 hover:bg-[var(--color-orange-accent)] hover:text-[var(--color-hvid)] transition">NÆSTE</button>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="form-step hidden">
+                    <h2 class="text-2xl md:text-3xl font-[Montserrat] mb-6">Telefonnummer & Email</h2>
+                    <input type="tel" placeholder="Telefonnummer" class="border-2 border-[var(--color-sort)] rounded-xl px-4 py-2 w-full mb-3" />
+                    <input type="email" placeholder="Email" class="border-2 border-[var(--color-sort)] rounded-xl px-4 py-2 w-full mb-6" />
+
+                    <div class="flex justify-center gap-4">
+                        <button type="button" class="back-btn border-2 border-[var(--color-sort)] rounded-full px-6 py-2 hover:bg-[var(--color-orange-accent)] hover:text-[var(--color-hvid)] transition">TILBAGE</button>
+                        <button type="button" class="next-btn border-2 border-[var(--color-sort)] rounded-full px-6 py-2 hover:bg-[var(--color-orange-accent)] hover:text-[var(--color-hvid)] transition">NÆSTE</button>
+                    </div>
+                </div>
+
+                <!-- Step 6 -->
+                <div class="form-step hidden">
+                    <h2 class="text-2xl md:text-3xl font-[Montserrat] mb-6">Bemærkninger</h2>
+                    <textarea placeholder="Evt. bemærkninger..." class="border-2 border-[var(--color-sort)] rounded-xl px-4 py-2 w-full h-28 mb-6"></textarea>
+
+                    <div class="flex justify-center gap-4">
+                        <button type="button" class="back-btn border-2 border-[var(--color-sort)] rounded-full px-6 py-2 hover:bg-[var(--color-orange-accent)] hover:text-[var(--color-hvid)] transition">TILBAGE</button>
+                        <button type="button" class="next-btn border-2 border-[var(--color-sort)] rounded-full px-6 py-2 hover:bg-[var(--color-orange-accent)] hover:text-[var(--color-hvid)] transition">NÆSTE</button>
+                    </div>
+                </div>
+
+                <!-- Step 7 -->
+                <div class="form-step hidden">
+                    <h2 class="text-2xl md:text-3xl font-[Montserrat] mb-6">Hvor fandt du HØJSKOLENDK?</h2>
+                    <input type="text" placeholder="Skriv hvor du hørte om os" class="border-2 border-[var(--color-sort)] rounded-xl px-4 py-2 w-full mb-6" />
+
+                    <div class="flex justify-center gap-4">
+                        <button type="button" class="back-btn border-2 border-[var(--color-sort)] rounded-full px-6 py-2 hover:bg-[var(--color-orange-accent)] hover:text-[var(--color-hvid)] transition">TILBAGE</button>
+                        <button type="button" class="next-btn border-2 border-[var(--color-sort)] rounded-full px-6 py-2 hover:bg-[var(--color-orange-accent)] hover:text-[var(--color-hvid)] transition">NÆSTE</button>
+                    </div>
+                </div>
+
+                <!-- Step 8 -->
+                <div class="form-step hidden">
+                    <h2 class="text-2xl md:text-3xl font-[Montserrat] mb-6">Betingelser</h2>
+                    <div class="text-left mb-6 space-y-3">
+                        <label class="flex items-start gap-2">
+                            <input type="checkbox" class="mt-1" />
+                            <span>Jeg har læst og accepteret rejsebetingelserne</span>
+                        </label>
+                        <label class="flex items-start gap-2">
+                            <input type="checkbox" class="mt-1" />
+                            <span>Jeg giver samtykke til, at mine oplysninger bruges ifm. tilmelding</span>
+                        </label>
+                    </div>
+
+                    <div class="flex justify-center gap-4">
+                        <button type="button" class="back-btn border-2 border-[var(--color-sort)] rounded-full px-6 py-2 hover:bg-[var(--color-orange-accent)] hover:text-[var(--color-hvid)] transition">TILBAGE</button>
+                        <button type="submit" class="border-2 border-[var(--color-sort)] rounded-full px-6 py-2 hover:bg-[var(--color-orange-accent)] hover:text-[var(--color-hvid)] transition">SEND</button>
+                    </div>
+                </div>
+            </form>
+
+            <!-- Thank You Message -->
+            <div id="thankYouMessage" class="hidden mt-10 text-center">
+                <h2 class="text-3xl font-[Montserrat] mb-4">Tak for din tilmelding!</h2>
+                <p class="p text-[var(--color-sort)]">Vi glæder os til at tage dig med på dit næste eventyr 🌍</p>
+            </div>
         </div>
+    </section>
 
-        <!-- Step 2 -->
-        <div class="form-step hidden">
-          <h2 class="text-2xl md:text-3xl font-[Montserrat] mb-1">Navn</h2>
-          <p class="text-[13px] text-[var(--color-orange-accent)] mb-5">PRÆCIS SOM DER STÅR I DIT PAS</p>
+    <script>
+        const steps = document.querySelectorAll(".form-step");
+        const nextBtns = document.querySelectorAll(".next-btn");
+        const backBtns = document.querySelectorAll(".back-btn");
+        const circle = document.getElementById("progressCircle");
+        const progressText = document.getElementById("progressText");
+        const stepLabel = document.getElementById("stepLabel");
+        const thankYou = document.getElementById("thankYouMessage");
+        const form = document.getElementById("multiStepForm");
 
-          <input type="text" placeholder="Fornavn & mellemnavne" class="border-2 border-[var(--color-sort)] rounded-xl px-4 py-2 w-full mb-3" />
-          <input type="text" placeholder="Efternavn" class="border-2 border-[var(--color-sort)] rounded-xl px-4 py-2 w-full mb-6" />
+        let currentStep = 0;
 
-          <div class="flex justify-center gap-4">
-            <button type="button" class="back-btn border-2 border-[var(--color-sort)] rounded-full px-6 py-2 hover:bg-[var(--color-orange-accent)] hover:text-[var(--color-hvid)] transition">TILBAGE</button>
-            <button type="button" class="next-btn border-2 border-[var(--color-sort)] rounded-full px-6 py-2 hover:bg-[var(--color-orange-accent)] hover:text-[var(--color-hvid)] transition">NÆSTE</button>
-          </div>
-        </div>
+        const updateForm = () => {
+            steps.forEach((step, index) => {
+                step.classList.toggle("active", index === currentStep);
+                step.classList.toggle("hidden", index !== currentStep);
+            });
 
-        <!-- Step 3 -->
-        <div class="form-step hidden">
-          <h2 class="text-2xl md:text-3xl font-[Montserrat] mb-1">Fødselsdato og Køn</h2>
-          <p class="text-[13px] text-[var(--color-orange-accent)] mb-5">PRÆCIS SOM DER STÅR I DIT PAS</p>
+            const percent = ((currentStep + 1) / steps.length) * 100;
+            const circumference = 157;
+            const offset = circumference - (percent / 100) * circumference;
+            circle.style.strokeDashoffset = offset.toString();
+            progressText.textContent = `${Math.round(percent)}%`;
+            stepLabel.textContent = `Spørgsmål ${currentStep + 1}/${steps.length}`;
+        };
 
-          <input type="date" class="border-2 border-[var(--color-sort)] rounded-xl px-4 py-2 w-full mb-4" />
-          <select class="border-2 border-[var(--color-sort)] rounded-full px-4 py-2 w-full mb-6">
-            <option>Køn</option>
-            <option>Kvinde</option>
-            <option>Mand</option>
-          </select>
+        nextBtns.forEach((btn) =>
+            btn.addEventListener("click", () => {
+                if (currentStep < steps.length - 1) {
+                    currentStep++;
+                    updateForm();
+                }
+            })
+        );
 
-          <div class="flex justify-center gap-4">
-            <button type="button" class="back-btn border-2 border-[var(--color-sort)] rounded-full px-6 py-2 hover:bg-[var(--color-orange-accent)] hover:text-[var(--color-hvid)] transition">TILBAGE</button>
-            <button type="button" class="next-btn border-2 border-[var(--color-sort)] rounded-full px-6 py-2 hover:bg-[var(--color-orange-accent)] hover:text-[var(--color-hvid)] transition">NÆSTE</button>
-          </div>
-        </div>
+        backBtns.forEach((btn) =>
+            btn.addEventListener("click", () => {
+                if (currentStep > 0) {
+                    currentStep--;
+                    updateForm();
+                }
+            })
+        );
 
-        <!-- Step 4 -->
-        <div class="form-step hidden">
-          <h2 class="text-2xl md:text-3xl font-[Montserrat] mb-6">Adresse, postnummer og by</h2>
-          <input type="text" placeholder="Adresse" class="border-2 border-[var(--color-sort)] rounded-xl px-4 py-2 w-full mb-3" />
-          <input type="text" placeholder="Postnummer og by" class="border-2 border-[var(--color-sort)] rounded-xl px-4 py-2 w-full mb-6" />
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            form.classList.add("hidden");
+            thankYou.classList.remove("hidden");
+        });
 
-          <div class="flex justify-center gap-4">
-            <button type="button" class="back-btn border-2 border-[var(--color-sort)] rounded-full px-6 py-2 hover:bg-[var(--color-orange-accent)] hover:text-[var(--color-hvid)] transition">TILBAGE</button>
-            <button type="button" class="next-btn border-2 border-[var(--color-sort)] rounded-full px-6 py-2 hover:bg-[var(--color-orange-accent)] hover:text-[var(--color-hvid)] transition">NÆSTE</button>
-          </div>
-        </div>
+        updateForm();
+    </script>
 
-        <!-- Step 5 -->
-        <div class="form-step hidden">
-          <h2 class="text-2xl md:text-3xl font-[Montserrat] mb-6">Telefonnummer & Email</h2>
-          <input type="tel" placeholder="Telefonnummer" class="border-2 border-[var(--color-sort)] rounded-xl px-4 py-2 w-full mb-3" />
-          <input type="email" placeholder="Email" class="border-2 border-[var(--color-sort)] rounded-xl px-4 py-2 w-full mb-6" />
-
-          <div class="flex justify-center gap-4">
-            <button type="button" class="back-btn border-2 border-[var(--color-sort)] rounded-full px-6 py-2 hover:bg-[var(--color-orange-accent)] hover:text-[var(--color-hvid)] transition">TILBAGE</button>
-            <button type="button" class="next-btn border-2 border-[var(--color-sort)] rounded-full px-6 py-2 hover:bg-[var(--color-orange-accent)] hover:text-[var(--color-hvid)] transition">NÆSTE</button>
-          </div>
-        </div>
-
-        <!-- Step 6 -->
-        <div class="form-step hidden">
-          <h2 class="text-2xl md:text-3xl font-[Montserrat] mb-6">Bemærkninger</h2>
-          <textarea placeholder="Evt. bemærkninger..." class="border-2 border-[var(--color-sort)] rounded-xl px-4 py-2 w-full h-28 mb-6"></textarea>
-
-          <div class="flex justify-center gap-4">
-            <button type="button" class="back-btn border-2 border-[var(--color-sort)] rounded-full px-6 py-2 hover:bg-[var(--color-orange-accent)] hover:text-[var(--color-hvid)] transition">TILBAGE</button>
-            <button type="button" class="next-btn border-2 border-[var(--color-sort)] rounded-full px-6 py-2 hover:bg-[var(--color-orange-accent)] hover:text-[var(--color-hvid)] transition">NÆSTE</button>
-          </div>
-        </div>
-
-        <!-- Step 7 -->
-        <div class="form-step hidden">
-          <h2 class="text-2xl md:text-3xl font-[Montserrat] mb-6">Hvor fandt du HØJSKOLENDK?</h2>
-          <input type="text" placeholder="Skriv hvor du hørte om os" class="border-2 border-[var(--color-sort)] rounded-xl px-4 py-2 w-full mb-6" />
-
-          <div class="flex justify-center gap-4">
-            <button type="button" class="back-btn border-2 border-[var(--color-sort)] rounded-full px-6 py-2 hover:bg-[var(--color-orange-accent)] hover:text-[var(--color-hvid)] transition">TILBAGE</button>
-            <button type="button" class="next-btn border-2 border-[var(--color-sort)] rounded-full px-6 py-2 hover:bg-[var(--color-orange-accent)] hover:text-[var(--color-hvid)] transition">NÆSTE</button>
-          </div>
-        </div>
-
-        <!-- Step 8 -->
-        <div class="form-step hidden">
-          <h2 class="text-2xl md:text-3xl font-[Montserrat] mb-6">Betingelser</h2>
-          <div class="text-left mb-6 space-y-3">
-            <label class="flex items-start gap-2">
-              <input type="checkbox" class="mt-1" />
-              <span>Jeg har læst og accepteret rejsebetingelserne</span>
-            </label>
-            <label class="flex items-start gap-2">
-              <input type="checkbox" class="mt-1" />
-              <span>Jeg giver samtykke til, at mine oplysninger bruges ifm. tilmelding</span>
-            </label>
-          </div>
-
-          <div class="flex justify-center gap-4">
-            <button type="button" class="back-btn border-2 border-[var(--color-sort)] rounded-full px-6 py-2 hover:bg-[var(--color-orange-accent)] hover:text-[var(--color-hvid)] transition">TILBAGE</button>
-            <button type="submit" class="border-2 border-[var(--color-sort)] rounded-full px-6 py-2 hover:bg-[var(--color-orange-accent)] hover:text-[var(--color-hvid)] transition">SEND</button>
-          </div>
-        </div>
-      </form>
-
-      <!-- Thank You Message -->
-      <div id="thankYouMessage" class="hidden mt-10 text-center">
-        <h2 class="text-3xl font-[Montserrat] mb-4">Tak for din tilmelding!</h2>
-        <p class="p text-[var(--color-sort)]">Vi glæder os til at tage dig med på dit næste eventyr 🌍</p>
-      </div>
-    </div>
-  </section>
-
-  <script>
-    const steps = document.querySelectorAll(".form-step");
-    const nextBtns = document.querySelectorAll(".next-btn");
-    const backBtns = document.querySelectorAll(".back-btn");
-    const circle = document.getElementById("progressCircle");
-    const progressText = document.getElementById("progressText");
-    const stepLabel = document.getElementById("stepLabel");
-    const thankYou = document.getElementById("thankYouMessage");
-    const form = document.getElementById("multiStepForm");
-
-    let currentStep = 0;
-
-    const updateForm = () => {
-      steps.forEach((step, index) => {
-        step.classList.toggle("active", index === currentStep);
-        step.classList.toggle("hidden", index !== currentStep);
-      });
-
-      const percent = ((currentStep + 1) / steps.length) * 100;
-      const circumference = 157;
-      const offset = circumference - (percent / 100) * circumference;
-      circle.style.strokeDashoffset = offset.toString();
-      progressText.textContent = `${Math.round(percent)}%`;
-      stepLabel.textContent = `Spørgsmål ${currentStep + 1}/${steps.length}`;
-    };
-
-    nextBtns.forEach((btn) =>
-      btn.addEventListener("click", () => {
-        if (currentStep < steps.length - 1) {
-          currentStep++;
-          updateForm();
+    <style>
+        .form-step {
+            transition: opacity 0.5s ease, transform 0.5s ease;
         }
-      })
-    );
-
-    backBtns.forEach((btn) =>
-      btn.addEventListener("click", () => {
-        if (currentStep > 0) {
-          currentStep--;
-          updateForm();
+        .form-step.hidden {
+            display: none;
+            opacity: 0;
+            transform: translateX(30px);
         }
-      })
-    );
-
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      form.classList.add("hidden");
-      thankYou.classList.remove("hidden");
-    });
-
-    updateForm();
-  </script>
-
-  <style>
-    .form-step {
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-    .form-step.hidden {
-      display: none;
-      opacity: 0;
-      transform: translateX(30px);
-    }
-    .form-step.active {
-      display: block;
-      opacity: 1;
-      transform: translateX(0);
-    }
-  </style>
+        .form-step.active {
+            display: block;
+            opacity: 1;
+            transform: translateX(0);
+        }
+    </style>
 
 </MainLayout>
